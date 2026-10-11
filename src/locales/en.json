@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "TODO: Name | Robotics Engineer",
+    "description": "TODO: one-line bio for search engines"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "langToggle": "中文"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "TODO: Name",
+    "nameEn": "TODO: name in pinyin",
+    "tagline": "TODO: one-line objective, e.g. engineer focused on embodied AI and robot interactive control",
+    "education": "TODO: school · major · graduation, e.g. XX University · Robotics · Class of 2026",
+    "viewProjects": "View Projects",
+    "downloadResume": "Download Resume"
+  },
+  "projectGroups": {
+    "collection": {
+      "title": "Data Collection",
+      "subtitle": "High-quality demonstration data for robot policy training: hardware, recording, encoding, upload"
+    },
+    "interaction": {
+      "title": "Interactive Control",
+      "subtitle": "Real-time human-driven devices: teleoperation mapping and natural-language control"
+    }
+  },
+  "projects": {
+    "umi": {
+      "title": "UMI Data Collection · Custom Handheld Device",
+      "summary": "TODO: one-liner, e.g. custom handheld capture device with wireless recording and auto-upload to the dataset hub",
+      "role": "TODO: your part, e.g. hardware selection, firmware, upload pipeline",
+      "stack": ["Raspberry Pi 4", "Wireless Recording", "Dataset Hub"],
+      "details": "TODO: details: hardware design, recording flow, data format, upload mechanism, scale",
+      "videoPlaceholder": "TODO: demo video link or local path (Bilibili/YouTube embed, or public/videos/umi.mp4)"
+    },
+    "ego": {
+      "title": "EGO Collection · Quest 3 + Stereo Vision",
+      "summary": "TODO: one-liner, e.g. recording setup with Meta Quest 3 hand tracking and an external USB stereo camera",
+      "role": "TODO: your part, e.g. recording pipeline, A/V encoding and sync, upload tooling",
+      "stack": ["Meta Quest 3", "Hand Tracking", "Stereo Camera", "A/V Encoding"],
+      "details": "TODO: details: calibration, time sync, encoding settings, dataset scale",
+      "videoPlaceholder": "TODO: demo video link or local path"
+    },
+    "teleop": {
+      "title": "Teleoperation · OpenXR + Unity + Quest",
+      "summary": "TODO: one-liner, e.g. OpenXR-based robot teleoperation with real-time motion mapping",
+      "role": "TODO: your part, e.g. Unity-side motion capture, mapping, comms link",
+      "stack": ["OpenXR", "Unity", "Meta Quest"],
+      "details": "TODO: details: DoF mapping, latency, supported robots, demo scenarios",
+      "videoPlaceholder": "TODO: demo video link or local path"
+    },
+    "coglet": {
+      "title": "Desktop Pet · ESP32 + ESP-CLAW",
+      "summary": "TODO: one-liner, e.g. natural-language dialogue and control on open-source coglet hardware via ESP32 running ESP-CLAW",
+      "role": "TODO: your part, e.g. firmware porting, dialogue pipeline, motion control",
+      "stack": ["ESP32", "ESP-CLAW", "Natural-Language Dialogue"],
+      "details": "TODO: details: reused open-source parts vs your own work, on-device trimming, interaction results",
+      "videoPlaceholder": "TODO: demo video link or local path"
+    }
+  },
+  "projectCard": {
+    "roleLabel": "My Role",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details",
+    "videoLabel": "Demo Video"
+  },
+  "skillsSection": {
+    "title": "Skills",
+    "subtitle": "TODO: adjust groups and items to match your background",
+    "groups": {
+      "robotics": "Robotics",
+      "embedded": "Embedded",
+      "software": "Software"
+    }
+  },
+  "contactSection": {
+    "title": "Contact",
+    "subtitle": "TODO: one-liner, e.g. open to robotics roles, happy to chat about embodied AI",
+    "email": "TODO: email address",
+    "github": "TODO: GitHub profile URL",
+    "linkedin": "TODO: LinkedIn profile URL",
+    "resumeNote": "TODO: drop your resume PDF at public/resume.pdf to enable this button"
+  },
+  "footer": {
+    "builtWith": "Built with React · Deployed on GitHub Pages"
+  }
+}

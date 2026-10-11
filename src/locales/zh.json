@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "TODO: 姓名 | 机器人工程师",
+    "description": "TODO: 个人简介一句话（用于搜索引擎摘要）"
+  },
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "skills": "技能",
+    "contact": "联系",
+    "langToggle": "EN"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "TODO: 姓名",
+    "nameEn": "TODO: 姓名拼音",
+    "tagline": "TODO: 一句话求职意向，例如：专注具身智能与机器人交互控制的工程师",
+    "education": "TODO: 学校 · 专业 · 毕业时间，例如：XX 大学 · 机器人工程 · 2026 届",
+    "viewProjects": "查看项目",
+    "downloadResume": "下载简历"
+  },
+  "projectGroups": {
+    "collection": {
+      "title": "数据采集",
+      "subtitle": "为机器人策略训练采集高质量演示数据：从硬件搭建到录制、编码、上传的完整链路"
+    },
+    "interaction": {
+      "title": "交互控制",
+      "subtitle": "让人实时驱动设备：遥操作映射与自然语言控制"
+    }
+  },
+  "projects": {
+    "umi": {
+      "title": "UMI 数据采集 · 自研手持设备",
+      "summary": "TODO: 一句话介绍，例如：自研手持采集设备，无线录制操作演示并自动上传至 dataset hub",
+      "role": "TODO: 你负责的部分，例如：硬件选型与结构设计、固件开发、上传链路",
+      "stack": ["Raspberry Pi 4", "无线录制", "Dataset Hub"],
+      "details": "TODO: 详细介绍：硬件方案、录制流程、数据格式、上传机制、采集规模（条数/时长）",
+      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径（B站/YouTube 嵌入链接，或 public/videos/umi.mp4）"
+    },
+    "ego": {
+      "title": "EGO 数采 · Quest 3 + 双目视觉",
+      "summary": "TODO: 一句话介绍，例如：基于 Meta Quest 3 手部追踪与外置 USB 双目摄像头的数据录制方案",
+      "role": "TODO: 你负责的部分，例如：录制管线、音视频编码同步、上传工具",
+      "stack": ["Meta Quest 3", "手部追踪", "双目摄像头", "音视频编码"],
+      "details": "TODO: 详细介绍：标定方案、时间同步策略、编码参数、数据规模",
+      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径"
+    },
+    "teleop": {
+      "title": "遥操作 · OpenXR + Unity + Quest",
+      "summary": "TODO: 一句话介绍，例如：基于 OpenXR 的机器人遥操作系统，动作实时映射",
+      "role": "TODO: 你负责的部分，例如：Unity 端动作捕捉、映射算法、通信链路",
+      "stack": ["OpenXR", "Unity", "Meta Quest"],
+      "details": "TODO: 详细介绍：自由度映射、延迟表现、支持的机型、演示场景",
+      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径"
+    },
+    "coglet": {
+      "title": "智能桌宠 · ESP32 + ESP-CLAW",
+      "summary": "TODO: 一句话介绍，例如：基于开源 coglet 桌宠硬件，用 ESP32 部署 ESP-CLAW 实现自然语言对话与控制",
+      "role": "TODO: 你负责的部分，例如：固件移植、对话链路、动作控制",
+      "stack": ["ESP32", "ESP-CLAW", "自然语言对话"],
+      "details": "TODO: 详细介绍：借用的开源部分、自研的部分、端侧部署的裁剪、交互效果",
+      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径"
+    }
+  },
+  "projectCard": {
+    "roleLabel": "我的分工",
+    "showDetails": "展开详情",
+    "hideDetails": "收起详情",
+    "videoLabel": "演示视频"
+  },
+  "skillsSection": {
+    "title": "技能栈",
+    "subtitle": "TODO: 可按实际调整分组与条目",
+    "groups": {
+      "robotics": "机器人",
+      "embedded": "嵌入式",
+      "software": "软件"
+    }
+  },
+  "contactSection": {
+    "title": "联系我",
+    "subtitle": "TODO: 一句话，例如：正在求职，欢迎交流具身智能与机器人方向的机会",
+    "email": "TODO: 邮箱地址",
+    "github": "TODO: GitHub 主页链接",
+    "linkedin": "TODO: LinkedIn 主页链接",
+    "resumeNote": "TODO: 简历 PDF 文件放到 public/resume.pdf 后，此按钮即可下载"
+  },
+  "footer": {
+    "builtWith": "Built with React · Deployed on GitHub Pages"
+  }
+}
