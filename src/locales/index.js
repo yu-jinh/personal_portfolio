@@ -3,13 +3,13 @@ import { initReactI18next } from 'react-i18next'
 import zh from './zh.json'
 import en from './en.json'
 
-// A saved choice wins; otherwise Chinese browsers get Chinese, everyone else English.
+// English by default; a visitor who switches language keeps their choice.
 function initialLanguage() {
   try {
     const saved = localStorage.getItem('lang')
     if (saved === 'zh' || saved === 'en') return saved
   } catch {}
-  return navigator.language?.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+  return 'en'
 }
 
 i18n.use(initReactI18next).init({
