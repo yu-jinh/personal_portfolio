@@ -1,70 +1,57 @@
 {
   "meta": {
-    "title": "Jinhong Yu | Robotics Software Engineer"
+    "title": "Jinhong Yu · Robotics Software Engineer"
   },
   "common": {
-    "present": "Present"
+    "present": "Present",
+    "skip": "Skip to content"
   },
   "nav": {
-    "projects": "Projects",
+    "work": "Work",
+    "research": "Writing",
     "experience": "Experience",
     "skills": "Skills",
     "contact": "Contact",
     "langToggle": "中文",
     "langLabel": "切换到中文",
-    "themeLabel": "Toggle light / dark theme",
+    "themeLight": "Switch to light theme",
+    "themeDark": "Switch to dark theme",
+    "sections": "Sections",
     "menu": "Menu",
-    "research": "Research"
+    "close": "Close menu"
   },
   "hero": {
-    "eyebrow": "Robotics Software Engineer",
     "name": "Jinhong Yu",
-    "headline": "I build the systems that let people teach robots: VR teleoperation, robot data collection and on-device AI.",
-    "summary": "Founding robotics engineer with hands-on experience across XR, embedded hardware and AI models — from the headset an operator wears to the dataset a robot policy learns from. M.S. in Artificial Intelligence, Northeastern University.",
-    "viewProjects": "View projects",
-    "resume": "Resume",
-    "focusLabel": "Focus areas",
-    "focus": [
-      "VR Teleoperation",
-      "Robot Data Collection",
-      "XR Human–Robot Interaction",
-      "Edge AI",
-      "Full-Stack Web"
+    "role": "Robotics software engineer",
+    "thesis": "I build the systems between people and robots: teleoperation, mixed-reality tools, and the capture rigs that turn human demonstrations into robot training data.",
+    "intro": "As the founding robotics engineer at Theta‑intelligence, I built a Meta Quest teleoperation platform with its real-time streaming layer, plus handheld and egocentric data-collection systems. My background is mechanical engineering and an M.S. in AI, so the work runs from CAD and wiring to Unity, perception and model fine-tuning.",
+    "status": [
+      { "label": "Now", "value": "Full-stack software engineer, SwiftShop", "detail": "since Aug 2026" },
+      { "label": "Before", "value": "Founding robotics engineer, Theta‑intelligence", "detail": "Sep 2024 – Jul 2026" },
+      { "label": "Study", "value": "M.S. Artificial Intelligence, Northeastern University", "detail": "2021 – 2023" }
     ],
-    "facts": [
-      {
-        "label": "Now",
-        "value": "Full-Stack Software Engineer · SwiftShop"
-      },
-      {
-        "label": "Before",
-        "value": "Founding Robotics Engineer · Theta-intelligence"
-      },
-      {
-        "label": "Education",
-        "value": "M.S. Artificial Intelligence · Northeastern University"
-      }
-    ]
+    "email": "Email",
+    "copyEmail": "Copy email address",
+    "copied": "Copied",
+    "linkedin": "LinkedIn",
+    "resume": "Résumé (PDF)",
+    "frameLabel": "A coordinate frame with x, y and z axes, the reference every robot pose is measured in"
   },
   "categories": {
-    "interaction": "Interactive Control",
-    "data": "Data Collection",
-    "ai": "AI & Models",
-    "web": "Full-Stack"
+    "interaction": "Interactive control",
+    "data": "Data collection",
+    "ai": "AI & models",
+    "web": "Full-stack"
   },
   "projectsSection": {
-    "eyebrow": "Selected work",
-    "title": "Projects",
-    "subtitle": "Systems I designed and shipped at work, each with its own write-up: the problem, what I built and how it fits together.",
-    "filterLabel": "Filter projects by category",
-    "all": "All",
-    "readMore": "Read case study"
+    "title": "Selected work",
+    "intro": "Systems I designed and built at Theta‑intelligence. Each write-up covers the problem, the constraints, the design decisions and what came out of them.",
+    "readMore": "Read the write-up"
   },
   "researchSection": {
-    "eyebrow": "Writing",
-    "title": "Research & Notes",
-    "subtitle": "Surveys and study notes from digging into how things work, mostly diffusion models.",
-    "read": "Read article",
+    "title": "Writing",
+    "intro": "A literature survey and a study note on diffusion models, written while learning the field.",
+    "read": "Read",
     "minRead_one": "{{count}} min read",
     "minRead_other": "{{count}} min read",
     "kinds": {
@@ -73,87 +60,82 @@
     }
   },
   "project": {
-    "back": "All projects",
+    "back": "All work",
+    "backResearch": "All writing",
     "role": "My role",
     "company": "Company",
     "period": "Period",
-    "stack": "Tech stack",
+    "stack": "Stack",
+    "facts": "Key numbers",
     "prev": "Previous",
     "next": "Next",
-    "more": "More projects",
+    "more": "More",
     "toc": "On this page",
-    "backResearch": "All research & notes"
+    "progress": "Reading progress"
   },
   "experienceSection": {
-    "eyebrow": "Career",
     "title": "Experience",
-    "subtitle": "Robotics, XR and AI engineering — plus full-stack web.",
-    "related": "Projects:",
+    "intro": "Robotics, XR and AI engineering, and most recently full-stack web.",
+    "related": "Related",
     "items": {
       "swiftshop": {
-        "role": "Full-Stack Software Engineer",
+        "role": "Full-stack software engineer",
         "company": "SwiftShop",
         "points": [
-          "Developing an e-commerce platform: a store-management back office and a customer-facing WeChat Mini Program."
+          { "text": "Building an e-commerce platform: a store-management back office for merchants and a customer-facing WeChat Mini Program." }
         ]
       },
       "theta": {
-        "role": "Founding Robotics Engineer",
-        "company": "Theta-intelligence",
+        "role": "Founding robotics engineer",
+        "company": "Theta‑intelligence",
         "points": [
-          "Built a full-stack VR teleoperation platform for robots, including interactive UI, mixed reality, computer-vision integration and external UVC camera support.",
-          "Developed Android native plugins for Meta Quest that run ONNX models on-device, including sherpa-onnx text-to-speech.",
-          "Designed and integrated robot data-collection hardware: a Meta Quest–based UMI device and an egocentric sensing platform.",
-          "Built end-to-end data pipelines on Raspberry Pi and Meta Quest with synchronized video, sensor and IoT recording for robot learning.",
-          "Developed real-time multi-modal media streaming between robots, XR devices and remote operator stations.",
-          "Deployed a voice-interactive AI agent on ESP32 (ESP-Claw) and Raspberry Pi (zero-Claw) for natural-language conversation and robot control."
+          { "label": "Teleoperation", "text": "Built the Meta Quest teleoperation app (Unity, OpenXR) with mixed-reality UI and external UVC camera support, and the real-time layer that streams video, audio and control between robots, headsets and remote operator stations." },
+          { "label": "Data collection", "text": "Designed and integrated the capture hardware, a Quest-tracked handheld UMI gripper and an egocentric rig, and built synchronized recording pipelines on Raspberry Pi and Quest for video, sensor and IoT data." },
+          { "label": "Edge AI", "text": "Wrote Android native plugins that run ONNX models on Quest, including sherpa-onnx text-to-speech, and deployed voice-driven AI agents on ESP32 (ESP-Claw) and Raspberry Pi (zero-Claw)." }
         ]
       },
       "cardinal": {
-        "role": "AI Model Engineering Intern",
+        "role": "AI model engineering intern",
         "company": "Cardinal Operations",
         "points": [
-          "Provided engineering support for text-to-image and text-to-video experiments.",
-          "Fine-tuned Stable Diffusion on limited hardware using LoRA and model parallelism.",
-          "Deployed a text-to-video pipeline focused on multi-character generation and character consistency."
+          { "text": "Fine-tuned Stable Diffusion on limited GPU hardware using LoRA and model parallelism." },
+          { "text": "Deployed a text-to-video pipeline aimed at multi-character scenes with consistent characters, and supported the team's text-to-image and text-to-video experiments." }
         ]
       },
       "neu": {
-        "role": "Research & Teaching Assistant",
+        "role": "Research and teaching assistant",
         "company": "Northeastern University",
         "points": [
-          "Supported coursework through grading and office hours; gave a well-received guest lecture on diffusion models.",
-          "Deployed lab servers to speed up research projects.",
-          "Designed, implemented and ran experiments across research initiatives so project leads could focus on ideas."
+          { "text": "Graded coursework, held office hours and gave a guest lecture on diffusion models." },
+          { "text": "Set up lab servers for research projects, and designed, implemented and ran experiments for project leads." }
         ]
       }
     }
   },
   "skillsSection": {
-    "eyebrow": "Toolbox",
     "title": "Skills",
-    "subtitle": "From robot middleware and XR to embedded hardware, AI models and the web.",
+    "intro": "Tools I've used in the work above.",
     "groups": {
       "robotics": "Robotics",
-      "xr": "XR Development",
-      "ai": "AI & Models",
-      "embedded": "Embedded & Hardware",
+      "xr": "XR",
+      "perception": "Perception & ML",
+      "embedded": "Embedded & hardware",
       "web": "Web",
-      "tools": "AI-Assisted Engineering"
+      "languages": "Languages",
+      "tools": "AI-assisted development"
     }
   },
   "educationSection": {
-    "eyebrow": "Background",
     "title": "Education",
     "items": [
       {
-        "degree": "M.S. in Artificial Intelligence",
+        "degree": "M.S. Artificial Intelligence",
         "school": "Northeastern University",
         "department": "Khoury College of Computer Sciences",
         "years": "2021 – 2023"
       },
       {
-        "degree": "B.Eng. in Machine Design, Manufacturing & Automation",
+        "degree": "B.Eng. Machine Design, Manufacturing & Automation",
         "school": "South China Agricultural University",
         "department": "College of Engineering",
         "years": "2013 – 2017"
@@ -161,17 +143,17 @@
     ]
   },
   "contactSection": {
-    "eyebrow": "Contact",
-    "title": "Let's build robots people can actually teach.",
-    "subtitle": "Interested in robotics, XR or embodied-AI roles and collaborations. The fastest way to reach me is email.",
-    "email": "Email me"
+    "title": "Contact",
+    "text": "For robotics, XR or embodied AI work, email is the quickest way to reach me."
   },
   "notFound": {
     "title": "Page not found",
-    "text": "The page you're looking for doesn't exist or has moved.",
+    "text": "This page doesn't exist or has moved.",
     "home": "Back to home"
   },
   "footer": {
-    "rights": "© {{year}} Jinhong Yu"
+    "rights": "© {{year}} Jinhong Yu",
+    "built": "Built with React and Vite",
+    "top": "Back to top"
   }
 }

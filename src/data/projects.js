@@ -1,11 +1,10 @@
 // Project registry. Array order = display order on the home page and prev/next order on project pages.
 //
 // Each project's write-up lives in src/content/projects/<slug>.<en|zh>.md
-// (frontmatter: title, summary, role; body: Markdown).
+// (frontmatter: title, summary, role, brief, facts; body: Markdown).
 //
-// cover: image in public/, e.g. './images/umi-cover.jpg'; empty → generated cover art
+// cover: image in public/, e.g. './images/umi-cover.jpg'; empty → no cover (text-only listing)
 // video: YouTube/Bilibili embed URL, or a file in public/ such as './videos/umi.mp4'; empty → no video block
-// label: short text printed on the generated cover
 // kind: 'work' (built in a job, listed under Projects) or 'survey' / 'note'
 //       (surveys and study notes, listed under Research & Notes, newest first)
 
@@ -17,8 +16,7 @@ export const PROJECTS = [
     slug: 'vr-teleoperation',
     kind: 'work',
     category: 'interaction',
-    label: 'TELEOP',
-    org: 'Theta-intelligence',
+    org: 'Theta‑intelligence',
     start: '2024',
     end: '2026',
     stack: ['Meta Quest 3', 'Unity', 'OpenXR', 'LiveKit', 'WebRTC', 'xArm 7', 'Mixed Reality'],
@@ -29,8 +27,7 @@ export const PROJECTS = [
     slug: 'digital-twin',
     kind: 'work',
     category: 'interaction',
-    label: 'TWIN',
-    org: 'Theta-intelligence',
+    org: 'Theta‑intelligence',
     start: '2024',
     end: '2026',
     stack: ['Meta Quest 3', 'Unity Shaders', 'ZED 2i', 'Point Clouds', 'URDF', 'FoundationPose', 'OpenCV', 'LiveKit'],
@@ -41,8 +38,7 @@ export const PROJECTS = [
     slug: 'umi-data-collection',
     kind: 'work',
     category: 'data',
-    label: 'UMI',
-    org: 'Theta-intelligence',
+    org: 'Theta‑intelligence',
     start: '2024',
     end: '2026',
     stack: ['Raspberry Pi 4', 'UVC Cameras', 'Meta Quest 3', 'BLE', 'ArUco', 'H.264 Encoding', 'Onshape'],
@@ -53,8 +49,7 @@ export const PROJECTS = [
     slug: 'ego-data-collection',
     kind: 'work',
     category: 'data',
-    label: 'EGO',
-    org: 'Theta-intelligence',
+    org: 'Theta‑intelligence',
     start: '2024',
     end: '2026',
     stack: ['Meta Quest 3', 'Stereo UVC Camera', 'OpenXR Hand Tracking', 'MediaPipe', 'MuJoCo', 'Gesture Recognition'],
@@ -65,8 +60,7 @@ export const PROJECTS = [
     slug: 'claw-voice-agent',
     kind: 'work',
     category: 'interaction',
-    label: 'COGLET',
-    org: 'Theta-intelligence',
+    org: 'Theta‑intelligence',
     start: '2026.04',
     end: '2026.04',
     stack: ['ESP32-S3', 'ESP-Claw', 'PCA9685', 'I²C', 'Lua', 'Grove Vision AI V2', 'LLM Tool Calling'],
@@ -78,7 +72,6 @@ export const PROJECTS = [
     slug: 'multi-character-diffusion',
     kind: 'survey',
     category: 'ai',
-    label: 'MULTI-CHARACTER',
     org: 'Cardinal Operations',
     start: '2024.09',
     end: '2024.09',
@@ -91,7 +84,6 @@ export const PROJECTS = [
     slug: 'ddpm-derivation',
     kind: 'note',
     category: 'ai',
-    label: 'DDPM',
     org: '',
     start: '2023.04',
     end: '2023.04',

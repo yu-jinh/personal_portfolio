@@ -1,64 +1,52 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Icon from './Icon.jsx'
+import Reveal from './Reveal.jsx'
+import Section from './Section.jsx'
 import ProjectCover from './ProjectCover.jsx'
-import SectionHeader from './SectionHeader.jsx'
-import { CATEGORIES, WORK } from '../data/projects.js'
+import Facts from './Facts.jsx'
+import { WORK } from '../data/projects.js'
 import { getPost } from '../lib/content.js'
+import { formatRange } from '../lib/format.js'
 
-export function ProjectCard({ project }) {
+// One row per project: what it is (brief), what it measured (facts), what it
+// was built with (stack). The title link stretches over the whole row.
+function WorkItem({ project, index }) {
   const { t, i18n } = useTranslation()
   const post = getPost(project.slug, i18n.language)
+  const period = formatRange(project.start, project.end, i18n.language, t('common.present'))
   return (
-    <Link className="card project-card" to={`/projects/${project.slug}`}>
-      <ProjectCover project={project} alt={post.title} />
-      <div className="card-body">
-        <p className={`category category-${project.category}`}>{t(`categories.${project.category}`)}</p>
-        <h3>{post.title}</h3>
-        <p className="card-summary">{post.summary}</p>
-        <ul className="tags">
-          {project.stack.slice(0, 4).map((s) => <li className="tag" key={s}>{s}</li>)}
+    <Reveal as="article" className="work-item">
+      <ProjectCover project={project} alt="" className="work-cover" />
+      <div className="work-body">
+        <p className="item-meta">
+          <span className="item-index">{String(index + 1).padStart(2, '0')}</span>
+          <span>{t(`categories.${project.category}`)}</span>
+          <span>{period}</span>
+        </p>
+        <h3 className="item-title">
+          <Link className="stretched-link" to={`/projects/${project.slug}`}>{post.title}</Link>
+        </h3>
+        <p className="item-brief">{post.brief || post.summary}</p>
+        <Facts facts={post.facts} />
+        <ul className="stack-list" aria-label={t('project.stack')}>
+          {project.stack.map((s) => <li key={s}>{s}</li>)}
         </ul>
-        <span className="card-cta">
-          {t('projectsSection.readMore')} <Icon name="arrowRight" size={16} />
+        <span className="item-cta" aria-hidden="true">
+          {t('projectsSection.readMore')} <Icon name="arrowRight" size={15} />
         </span>
       </div>
-    </Link>
+    </Reveal>
   )
 }
 
-export default function Projects() {
+export default function Projects({ index }) {
   const { t } = useTranslation()
-  const [filter, setFilter] = useState('all')
-  const shown = filter === 'all' ? WORK : WORK.filter((p) => p.category === filter)
-  // Only offer filters that have at least one work project behind them.
-  const filters = ['all', ...CATEGORIES.filter((c) => WORK.some((p) => p.category === c))]
-
   return (
-    <section id="projects" className="section">
-      <div className="container">
-        <SectionHeader
-          eyebrow={t('projectsSection.eyebrow')}
-          title={t('projectsSection.title')}
-          subtitle={t('projectsSection.subtitle')}
-        />
-        <div className="filters" role="group" aria-label={t('projectsSection.filterLabel')}>
-          {filters.map((key) => (
-            <button
-              key={key}
-              className={`filter${filter === key ? ' is-active' : ''}`}
-              aria-pressed={filter === key}
-              onClick={() => setFilter(key)}
-            >
-              {key === 'all' ? t('projectsSection.all') : t(`categories.${key}`)}
-            </button>
-          ))}
-        </div>
-        <div className="project-grid">
-          {shown.map((p) => <ProjectCard key={p.slug} project={p} />)}
-        </div>
+    <Section id="work" index={index} title={t('projectsSection.title')} intro={t('projectsSection.intro')}>
+      <div className="work-list">
+        {WORK.map((p, i) => <WorkItem key={p.slug} project={p} index={i} />)}
       </div>
-    </section>
+    </Section>
   )
 }

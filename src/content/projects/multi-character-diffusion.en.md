@@ -2,13 +2,14 @@
 title: Visual Novel Generation: Consistent & Multi-Character Diffusion
 summary: A technical survey on generating visual-novel art with diffusion models: keeping characters consistent across scenes and placing several characters in one image. I reproduced the methods in ComfyUI and ran my own multi-character experiments.
 role: AI Model Engineering Intern. Researched the methods, reproduced them in ComfyUI, ran the multi-character experiments and presented the survey to the team.
+brief: How to keep characters consistent across scenes and place several in one image: StoryDiffusion, IP-Adapter and DenseDiffusion, plus my own regional-prompting experiments.
 ---
 
 ## At a glance
 
 - **What:** A survey and hands-on evaluation of methods for story-style image generation, presented to the team in September 2024
 - **Why:** Visual novels and illustrated stories need the *same* characters across many scenes, often several in one frame, and that is exactly where standard diffusion models break down
-- **Highlights:** StoryDiffusion · IP-Adapter · DenseDiffusion · Regional Prompter · StoryTeller text-to-video · ComfyUI reproductions
+- **Covers:** StoryDiffusion · IP-Adapter · DenseDiffusion · Regional Prompter · StoryTeller text-to-video · ComfyUI reproductions
 
 ## The problem
 

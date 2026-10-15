@@ -2,13 +2,15 @@
 title: UMI Data Collection Device
 summary: A pair of self-built handheld grippers for recording two-handed robot manipulation demonstrations without a robot. Meta Quest controllers track each gripper, and an on-board Raspberry Pi 4 records its wrist cameras.
 role: Built it end to end, mostly on my own: mechanical design (fingers adapted from the UFactory xArm Gripper), electronics, the Raspberry Pi recorder, the Quest recording app with its state machine, and post-processing.
+brief: Recording two-handed manipulation without a robot: a pair of handheld grippers with wrist cameras, tracked by Quest controllers and coordinated by one state machine on the headset.
+facts: 2 × 2 :: grippers × wrist cameras || 640 × 480 :: per wrist camera || 3 :: recorders under one state machine
 ---
 
 ## At a glance
 
 - **What:** Two handheld grippers (left and right) plus a Meta Quest 3, recording two-handed manipulation demonstrations
 - **Why:** Collecting data with a real robot is slow and expensive. Handheld grippers let a person record demonstrations anywhere, and the data transfers to a robot with the same gripper.
-- **Highlights:** Quest controller pose tracking · two wrist cameras per gripper with hardware H.264 encoding · gripper opening read from ArUco markers · BLE buttons driving a state machine on the headset · Wi-Fi upload after every episode
+- **Main parts:** Quest controller pose tracking · two wrist cameras per gripper with hardware H.264 encoding · gripper opening read from ArUco markers · BLE buttons driving a state machine on the headset · Wi-Fi upload after every episode
 
 ## The problem
 

@@ -2,13 +2,15 @@
 title: EGO Data Collection with Meta Quest 3
 summary: A first-person data collection setup with no handheld hardware. A Meta Quest 3 worn around the neck records a stereo camera, both hands' skeletons and palm trajectories, and two-handed gestures drive the same recording state machine as the UMI device.
 role: Designed and built the setup: the Quest app (UVC camera capture, hand-tracking export, gesture recognition and the recording state machine), the signal checks in simulation and on a real robot, and the recording pipeline.
+brief: First-person demonstrations with bare hands: a neck-worn Quest records stereo video, hand skeletons and palm trajectories, with recording started, stopped and labelled by gestures.
+facts: 21 :: keypoints per hand (MediaPipe layout) || ≈ 1 s :: two-hand gesture hold to start or stop
 ---
 
 ## At a glance
 
 - **What:** First-person recordings of people doing tasks with their own hands: stereo video, plus the 3D motion of both hands
 - **Why:** Human egocentric data scales far better than robot data. Anyone can record it, anywhere, with no gripper to hold.
-- **Highlights:** Quest 3 worn around the neck · stereo UVC camera captured by the headset · OpenXR hand joints recast into the MediaPipe 21-keypoint layout · Palm Pose instead of wrist pose · two-handed gesture commands · the same state machine and upload pipeline as UMI
+- **Main parts:** Quest 3 worn around the neck · stereo UVC camera captured by the headset · OpenXR hand joints recast into the MediaPipe 21-keypoint layout · Palm Pose instead of wrist pose · two-handed gesture commands · the same state machine and upload pipeline as UMI
 
 ## From UMI to EGO
 

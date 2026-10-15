@@ -2,13 +2,15 @@
 title: Digital Twin in Mixed Reality: Robot Data Inside a Quest Headset
 summary: Bringing the real world into a Meta Quest headset as live, layered data: stereo video with real depth, depth-camera point clouds, scanned 3D scenes, a URDF robot twin that moves with the real robot, and detected objects placed at their true 6D poses.
 role: Built the visualization stack end to end: the stereo and point-cloud shaders, the depth and PLY renderers, the runtime URDF loader and joint sync, and the object-pose pipeline into the robot base frame.
+brief: Bringing a remote robot's surroundings into the headset: per-eye stereo video, depth point clouds, a URDF twin synced to the real robot, and detected objects at their 6D poses.
+facts: 15 Hz :: robot joint-state sync || 2.2 M :: points in the PLY scan demo || 2 tracks :: left/right stereo video
 ---
 
 ## At a glance
 
 - **What:** A mixed-reality view where an operator sees a robot's world from inside a Quest headset: video, depth, 3D scans, the robot's live state and the objects around it, all at once
 - **Why:** Remote operators need more than a flat video feed. Depth, geometry and robot state make it possible to judge distances and act safely without being in the room.
-- **Highlights:** Per-eye stereo shader for true depth perception · one GPU point per pixel from depth video · millions-of-points PLY scans · URDF robots loaded at runtime from the cloud, synced at 15 Hz · FoundationPose object poses in the robot's frame · everything over the same LiveKit infrastructure as my [teleoperation platform](#/projects/vr-teleoperation)
+- **Main parts:** Per-eye stereo shader for true depth perception · one GPU point per pixel from depth video · millions-of-points PLY scans · URDF robots loaded at runtime from the cloud, synced at 15 Hz · FoundationPose object poses in the robot's frame · everything over the same LiveKit infrastructure as my [teleoperation platform](#/projects/vr-teleoperation)
 
 ## The building blocks, in plain words
 
@@ -122,12 +124,12 @@ The resulting poses go over the room's data channel and appear as boxes on the t
 
 The hard part is almost always step 2: finding reliable 2D–3D matches. Occlusion and reflections break it, and symmetric objects are ambiguous; a textureless cylinder looks the same however it's turned about its own axis. FoundationPose sidesteps hand-picked features by matching the image against the object's 3D model, so it works on everyday objects with no markers or special texture.
 
-## What I'd highlight
+## Design decisions
 
-- **Many kinds of data, one headset:** stereo video, depth, point clouds, robot state and object poses, each with a renderer built for it.
-- **GPU-first rendering:** custom shaders and one-call point rendering keep millions of points and per-eye video smooth on a standalone headset.
-- **Robots as data, not code:** a URDF from cloud storage plus a joint stream is all a new robot needs to appear as a twin.
-- **Built on shared infrastructure:** everything rides the LiveKit rooms from the [teleoperation platform](#/projects/vr-teleoperation).
+- **One renderer per data type.** Stereo video, depth, point clouds, robot state and object poses each get a renderer built for that data, all inside one headset app.
+- **Rendering on the GPU.** Custom shaders handle the per-eye video, and each point cloud is drawn in a single call, so multi-million-point scans stay smooth on a standalone headset.
+- **Robots as data, not code.** A URDF from cloud storage plus a joint-state stream is all a new robot needs to appear as a twin.
+- **Shared infrastructure.** Everything travels through the LiveKit rooms of the [teleoperation platform](#/projects/vr-teleoperation), so no new streaming service was needed.
 
 ## Related
 

@@ -2,13 +2,15 @@
 title: An ESP32 AI Agent and Control Module for the Coglet Robot
 summary: I reproduced the open-source Coglet robot and built my own AI agent and control module for it on an ESP32-S3, using Espressif's ESP-Claw framework, to test how well an LLM agent works on a tiny embedded board. The robot understands plain-language requests, triggers recorded motions, reports its own hardware, streams camera and audio, and sees people through an on-board AI vision module.
 role: Reproduced the Coglet hardware from its open-source design, then built the agent and control layer on top: the ESP32 and I²C servo control wiring, porting ESP-Claw to the robot, the teach pendant with skill and task record/replay, the Lua bridge that lets the agent call motions, web camera and audio streaming, and the vision-module integration.
+brief: Testing an LLM agent on a microcontroller: an ESP32-S3 drives the open-source Coglet robot through recorded motion skills, answers in plain language and reads an on-board vision module.
+facts: 9 servos :: driven over 2 I²C wires || ≈ 21 ms :: vision inference per frame, on the module || 640 × 480 :: browser camera stream at 30 fps
 ---
 
 ## At a glance
 
 - **What:** A small desktop robot companion whose "brain" is an AI agent running on a microcontroller the size of a postage stamp
 - **Why:** To find out how capable an LLM agent can be on cheap embedded hardware with a few hundred kilobytes of RAM, and what it takes to let it act in the physical world safely
-- **Highlights:** XIAO ESP32-S3 + PCA9685 over two I²C wires · ESP-Claw agent framework · teach pendant to record and replay motions · plain-language control through terminal or web chat · live camera and audio in the browser · on-device person and face detection
+- **Main parts:** XIAO ESP32-S3 + PCA9685 over two I²C wires · ESP-Claw agent framework · teach pendant to record and replay motions · plain-language control through terminal or web chat · live camera and audio in the browser · on-device person and face detection
 
 ## The building blocks, in plain words
 

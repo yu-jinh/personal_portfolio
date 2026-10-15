@@ -11,10 +11,20 @@ const keyOf = (path) => {
   return found ? `${found[1]}.${found[2]}` : null
 }
 
+// Frontmatter `facts: 200 Hz :: teleop command rate || 30 fps :: camera stream`
+// → [{ value: '200 Hz', context: 'teleop command rate' }, …]. Every number on
+// the site is written with what it measures, so it never stands alone.
+const parseFacts = (raw) =>
+  (raw || '')
+    .split('||')
+    .map((item) => item.split('::').map((s) => s.trim()))
+    .filter(([value, context]) => value && context)
+    .map(([value, context]) => ({ value, context }))
+
 const posts = {}
 for (const [path, meta] of Object.entries(metas)) {
   const key = keyOf(path)
-  if (key) posts[key] = { ...meta, key }
+  if (key) posts[key] = { ...meta, facts: parseFacts(meta.facts), key }
 }
 
 const loaders = {}

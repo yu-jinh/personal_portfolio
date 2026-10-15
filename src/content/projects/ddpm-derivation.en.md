@@ -2,6 +2,7 @@
 title: Deriving DDPM: The Math Behind Diffusion Models
 summary: A from-scratch derivation of Denoising Diffusion Probabilistic Models: the closed-form forward process, the reverse posterior, and the variational bound that reduces to a simple noise-prediction loss. I then trained my own DDPM on Fashion-MNIST.
 role: Independent study. I worked through the original papers, wrote the full derivation and trained a DDPM from scratch.
+brief: A step-by-step derivation of DDPM, from the closed-form forward process to the noise-prediction loss, with a model I trained on Fashion-MNIST.
 ---
 
 ## Motivation

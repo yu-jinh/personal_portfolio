@@ -22,12 +22,14 @@ export const EXPERIENCE = [
   { key: 'neu', start: '2023.06', end: '2023.12', projects: [] },
 ]
 
-// Group titles are under skillsSection.groups.<key>; items are proper nouns, shown as-is.
+// Group titles are under skillsSection.groups.<key>; items are technical names, shown as-is.
+// Only tools backed by the résumé or by a write-up on this site belong here.
 export const SKILLS = [
-  { key: 'robotics', items: ['ROS 2', 'dora-rs', 'Teleoperation', 'Robot Data Collection', 'Motion Control'] },
-  { key: 'xr', items: ['Unity', 'OpenXR', 'Meta Quest', 'Mixed Reality', 'Android Native Plugins'] },
-  { key: 'ai', items: ['Robot Policy Models', 'Diffusion Models', 'LoRA Fine-tuning', 'NLP', 'ONNX', 'sherpa-onnx'] },
-  { key: 'embedded', items: ['ESP32 / ESP-IDF', 'Raspberry Pi', 'Sensors & Motors', '3D Modeling', '3D Printing'] },
+  { key: 'robotics', items: ['ROS 2', 'dora-rs', 'Teleoperation', 'Motion control', 'URDF', 'LiveKit / WebRTC'] },
+  { key: 'xr', items: ['Unity', 'OpenXR', 'Meta Quest 3', 'Hand tracking', 'Mixed reality', 'Unity shaders', 'Android native plugins'] },
+  { key: 'perception', items: ['OpenCV', 'FoundationPose', 'MediaPipe', 'ArUco', 'ONNX / sherpa-onnx', 'Stable Diffusion', 'LoRA fine-tuning', 'Robot policy models'] },
+  { key: 'embedded', items: ['ESP32 / ESP-IDF', 'Raspberry Pi', 'I²C peripherals', 'UVC cameras', 'Sensors & motors', 'Onshape CAD', '3D printing'] },
   { key: 'web', items: ['Spring Boot', 'Vue', 'SQL Server', 'Redis', 'Caddy', 'WeChat Mini Program'] },
-  { key: 'tools', items: ['Cursor', 'Claude Code', 'Agent Skills'] },
+  { key: 'languages', items: ['C#', 'Python', 'Java', 'C', 'Lua'] },
+  { key: 'tools', items: ['Cursor', 'Claude Code'] },
 ]

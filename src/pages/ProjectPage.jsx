@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Icon from '../components/Icon.jsx'
 import MediaEmbed from '../components/MediaEmbed.jsx'
 import PostToc from '../components/PostToc.jsx'
 import ProjectCover from '../components/ProjectCover.jsx'
+import Facts from '../components/Facts.jsx'
 import { getProject, isResearch, siblingsOf } from '../data/projects.js'
 import { getPost, loadPostBody } from '../lib/content.js'
-import { formatRange } from '../lib/format.js'
+import { formatMonth, formatRange } from '../lib/format.js'
 import useDocumentTitle from '../lib/useDocumentTitle.js'
 import NotFound from './NotFound.jsx'
 
@@ -65,12 +66,40 @@ function useLazyClips(body) {
   }, [body])
 }
 
+// A thin bar under the navbar showing how far through the article the reader is.
+function ReadingProgress({ target }) {
+  const bar = useRef(null)
+  useEffect(() => {
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const el = target.current
+      if (!el || !bar.current) return
+      const rect = el.getBoundingClientRect()
+      const total = rect.height - window.innerHeight
+      const done = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 1
+      bar.current.style.transform = `scaleX(${done})`
+    }
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update) }
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      cancelAnimationFrame(frame)
+    }
+  }, [target])
+  return <div className="reading-progress" aria-hidden="true"><span ref={bar} /></div>
+}
+
 export default function ProjectPage() {
   const { slug } = useParams()
   const { t, i18n } = useTranslation()
   const project = getProject(slug)
   const post = project ? getPost(slug, i18n.language) : null
   const body = usePostBody(post)
+  const articleRef = useRef(null)
   useLazyClips(body)
   useDocumentTitle(post ? `${post.title} | ${t('hero.name')}` : t('meta.title'))
 
@@ -82,22 +111,30 @@ export default function ProjectPage() {
   const period = formatRange(project.start, project.end, i18n.language, t('common.present'))
 
   return (
-    <article className="post">
+    <article className="post" ref={articleRef}>
+      <ReadingProgress target={articleRef} />
       <header className="post-header">
         <div className="container container-narrow">
-          <Link className="back-link" to="/" state={{ scrollTo: research ? 'research' : 'projects' }}>
+          <Link className="back-link" to="/" state={{ scrollTo: research ? 'research' : 'work' }}>
             <Icon name="arrowLeft" size={16} /> {t(research ? 'project.backResearch' : 'project.back')}
           </Link>
           {research ? (
-            <p className="research-meta">
-              <span className={`kind-badge kind-${project.kind}`}>{t(`researchSection.kinds.${project.kind}`)}</span>
+            <p className="item-meta">
+              <span className="item-kind">{t(`researchSection.kinds.${project.kind}`)}</span>
+              <span>{formatMonth(project.start, i18n.language)}</span>
               <span>{t('researchSection.minRead', { count: post.readingMinutes })}</span>
             </p>
           ) : (
-            <p className={`category category-${project.category}`}>{t(`categories.${project.category}`)}</p>
+            <p className="item-meta"><span className="item-kind">{t(`categories.${project.category}`)}</span></p>
           )}
           <h1>{post.title}</h1>
           <p className="post-lede">{post.summary}</p>
+          {post.facts.length > 0 && (
+            <div className="post-facts">
+              <p className="meta-label" id="post-facts-label">{t('project.facts')}</p>
+              <Facts facts={post.facts} className="facts-strip" />
+            </div>
+          )}
           <dl className="post-meta">
             <div className="post-meta-role">
               <dt>{t('project.role')}</dt>
@@ -116,8 +153,8 @@ export default function ProjectPage() {
             <div className="post-meta-stack">
               <dt>{t('project.stack')}</dt>
               <dd>
-                <ul className="tags">
-                  {project.stack.map((s) => <li className="tag" key={s}>{s}</li>)}
+                <ul className="stack-list">
+                  {project.stack.map((s) => <li key={s}>{s}</li>)}
                 </ul>
               </dd>
             </div>
@@ -125,11 +162,13 @@ export default function ProjectPage() {
         </div>
       </header>
 
-      <div className="container container-media">
-        {project.video
-          ? <MediaEmbed src={project.video} title={post.title} poster={project.cover} />
-          : <ProjectCover project={project} alt={post.title} large />}
-      </div>
+      {(project.video || project.cover) && (
+        <div className="container container-media">
+          {project.video
+            ? <MediaEmbed src={project.video} title={post.title} poster={project.cover} />
+            : <ProjectCover project={project} alt={post.title} className="post-cover" eager />}
+        </div>
+      )}
 
       <div className="container container-narrow">
         {body ? (

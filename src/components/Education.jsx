@@ -1,24 +1,24 @@
 import { useTranslation } from 'react-i18next'
-import SectionHeader from './SectionHeader.jsx'
+import Reveal from './Reveal.jsx'
+import Section from './Section.jsx'
 
-export default function Education() {
+export default function Education({ index }) {
   const { t } = useTranslation()
   const items = t('educationSection.items', { returnObjects: true })
   return (
-    <section id="education" className="section">
-      <div className="container">
-        <SectionHeader eyebrow={t('educationSection.eyebrow')} title={t('educationSection.title')} />
-        <div className="edu-grid">
-          {items.map((e) => (
-            <div className="card edu-card" key={e.degree}>
-              <p className="edu-years">{e.years}</p>
+    <Section id="education" index={index} title={t('educationSection.title')}>
+      <ol className="entry-list">
+        {items.map((e) => (
+          <Reveal as="li" className="entry" key={e.degree}>
+            <p className="entry-when">{e.years}</p>
+            <div className="entry-body">
               <h3>{e.degree}</h3>
-              <p className="edu-school">{e.school}</p>
-              <p className="edu-dept">{e.department}</p>
+              <p className="entry-org">{e.school}</p>
+              <p className="entry-sub">{e.department}</p>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </Reveal>
+        ))}
+      </ol>
+    </Section>
   )
 }

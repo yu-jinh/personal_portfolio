@@ -1,37 +1,37 @@
 import { useTranslation } from 'react-i18next'
 import Icon from './Icon.jsx'
+import Reveal from './Reveal.jsx'
+import Section from './Section.jsx'
+import EmailActions from './EmailActions.jsx'
 import { PROFILE } from '../data/profile.js'
 
-export default function Contact() {
+export default function Contact({ index }) {
   const { t } = useTranslation()
   return (
-    <section id="contact" className="section section-alt">
-      <div className="container">
-        <div className="contact-panel">
-          <div>
-            <p className="eyebrow">{t('contactSection.eyebrow')}</p>
-            <h2>{t('contactSection.title')}</h2>
-            <p className="contact-text">{t('contactSection.subtitle')}</p>
-            <p className="contact-email">{PROFILE.email}</p>
-          </div>
-          <div className="contact-actions">
-            <a className="btn btn-primary" href={`mailto:${PROFILE.email}`}>
-              <Icon name="mail" size={16} /> {t('contactSection.email')}
+    <Section id="contact" index={index} tone="ink" title={t('contactSection.title')}>
+      <Reveal className="contact">
+        <p className="contact-text">{t('contactSection.text')}</p>
+        <EmailActions showAddress />
+        <ul className="contact-links">
+          <li>
+            <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
+              {t('hero.linkedin')} <Icon name="arrowUpRight" size={15} />
             </a>
-            <a className="btn" href={PROFILE.linkedin} target="_blank" rel="noreferrer">
-              <Icon name="linkedin" size={16} /> LinkedIn
+          </li>
+          <li>
+            <a href={PROFILE.resume} target="_blank" rel="noreferrer">
+              {t('hero.resume')} <Icon name="arrowUpRight" size={15} />
             </a>
-            <a className="btn" href={PROFILE.resume} target="_blank" rel="noreferrer">
-              <Icon name="download" size={16} /> {t('hero.resume')}
-            </a>
-            {PROFILE.github && (
-              <a className="btn" href={PROFILE.github} target="_blank" rel="noreferrer">
-                <Icon name="github" size={16} /> GitHub
+          </li>
+          {PROFILE.github && (
+            <li>
+              <a href={PROFILE.github} target="_blank" rel="noreferrer">
+                GitHub <Icon name="arrowUpRight" size={15} />
               </a>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
+            </li>
+          )}
+        </ul>
+      </Reveal>
+    </Section>
   )
 }

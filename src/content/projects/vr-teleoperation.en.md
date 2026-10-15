@@ -2,13 +2,15 @@
 title: VR Teleoperation Platform for Robots
 summary: A Meta Quest app and real-time infrastructure for driving robots remotely. Operators, robots and observers meet in a LiveKit room; one robot-independent interface drives xArm arms and a humanoid with dexterous hands, and one click switches between robots.
 role: Founding engineer. Designed and built the platform end to end: the Quest app (Unity + OpenXR), the LiveKit room architecture, the robot-independent teleop interface and robot bridges, controller calibration, and the data-collection workflow.
+brief: Driving robots from a Quest headset: one robot-independent teleop message, carried through LiveKit rooms, so a single app controls different robots and others can watch live.
+facts: 200 Hz :: teleop command rate || 30 fps :: robot camera stream || 3 robots :: tested in one room
 ---
 
 ## At a glance
 
 - **What:** Real-time robot teleoperation from a Meta Quest headset, with live video, audio and data in both directions
 - **Why:** Teleoperation is the most direct way to collect high-quality demonstrations for robot learning, and to control robots that are far away
-- **Highlights:** Unity + OpenXR app on Meta Quest 3 · LiveKit rooms where operators, robots and observers are all participants · one interface for different robots · control at 200 Hz, video at 30 fps · up to 3 robots in one room, switched with one click
+- **Main parts:** Unity + OpenXR app on Meta Quest 3 · LiveKit rooms where operators, robots and observers are all participants · one interface for different robots · control at 200 Hz, video at 30 fps · up to 3 robots in one room, switched with one click
 
 ## The building blocks, in plain words
 
@@ -106,11 +108,12 @@ The same platform drives a humanoid with **Wuji dexterous hands**, provided by [
 <figcaption>The full workflow, step by step: connect, switch to hand tracking, align and engage with the pedals, record, label and reset. Sped up (2–3×), with the repeated second episode cut. Faces are blurred.</figcaption>
 </figure>
 
-## What I'd highlight
+## Design decisions
 
-- **End-to-end ownership:** the Quest app, the room architecture, the robot bridges and the data-collection workflow were all built by me.
-- **Designed to scale out:** robots, operators and observers are all just participants, so adding a robot or a viewer needs no new infrastructure.
-- **Built for data:** the same platform feeds robot-learning datasets, alongside my [UMI](#/projects/umi-data-collection) and [EGO](#/projects/ego-data-collection) collection work.
+- **Everyone is a room participant.** Robots, operators and observers all join the same LiveKit room, so adding a robot or a viewer means joining a room, not standing up new infrastructure.
+- **One robot-independent teleop message.** The headset sends the same command to every robot and each robot's bridge maps it onto its own joints, which is what makes switching robots a one-click change.
+- **Lossy channel for control.** Only the newest pose matters, so teleop commands at 200 Hz go over the lossy channel; a late command is dropped instead of queued behind newer ones.
+- **Recording inside the teleop app.** Recording, labelling and resetting happen in the same headset session, so the platform also produces robot-learning data, alongside my [UMI](#/projects/umi-data-collection) and [EGO](#/projects/ego-data-collection) rigs.
 
 ## Related
 
