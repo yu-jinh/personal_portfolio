@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="960" height="560" rx="16" fill="#ffffff"/>
+
+  <!-- XIAO -->
+  <rect x="40" y="70" width="230" height="250" rx="14" fill="#1f2937"/>
+  <rect x="104" y="96" width="102" height="62" rx="6" fill="#9ca3af"/>
+  <text x="155" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">ESP32-S3</text>
+  <circle cx="155" cy="196" r="20" fill="#111827" stroke="#6b7280" stroke-width="3"/>
+  <circle cx="155" cy="196" r="7" fill="#374151"/>
+  <text x="155" y="236" text-anchor="middle" font-size="11.5" fill="#d1d5db">camera + mic (Sense)</text>
+  <text x="155" y="292" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">XIAO ESP32-S3 Sense</text>
+  <g font-size="13" font-weight="700" font-family="Consolas, monospace">
+    <rect x="270" y="98" width="70" height="26" rx="5" fill="#dc2626"/><text x="305" y="116" text-anchor="middle" fill="#fff">3V3</text>
+    <rect x="270" y="142" width="70" height="26" rx="5" fill="#111827"/><text x="305" y="160" text-anchor="middle" fill="#fff">GND</text>
+    <rect x="270" y="186" width="70" height="26" rx="5" fill="#2563eb"/><text x="305" y="204" text-anchor="middle" fill="#fff">GPIO5</text>
+    <rect x="270" y="230" width="70" height="26" rx="5" fill="#ca8a04"/><text x="305" y="248" text-anchor="middle" fill="#fff">GPIO6</text>
+  </g>
+
+  <!-- PCA9685 -->
+  <rect x="560" y="70" width="360" height="250" rx="14" fill="#1d4ed8"/>
+  <text x="740" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">PCA9685 · 16-ch PWM servo driver</text>
+  <text x="740" y="126" text-anchor="middle" font-size="12.5" fill="#bfdbfe">I²C address 0x40</text>
+  <g font-size="13" font-weight="700" font-family="Consolas, monospace">
+    <rect x="490" y="98" width="70" height="26" rx="5" fill="#dc2626"/><text x="525" y="116" text-anchor="middle" fill="#fff">VCC</text>
+    <rect x="490" y="142" width="70" height="26" rx="5" fill="#111827"/><text x="525" y="160" text-anchor="middle" fill="#fff">GND</text>
+    <rect x="490" y="186" width="70" height="26" rx="5" fill="#2563eb"/><text x="525" y="204" text-anchor="middle" fill="#fff">SDA</text>
+    <rect x="490" y="230" width="70" height="26" rx="5" fill="#ca8a04"/><text x="525" y="248" text-anchor="middle" fill="#fff">SCL</text>
+  </g>
+  <!-- screw terminal V+ -->
+  <rect x="826" y="140" width="84" height="40" rx="6" fill="#16a34a"/>
+  <text x="868" y="165" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">V+ / GND</text>
+  <!-- servo headers -->
+  <g fill="#0f172a">
+    <rect x="590" y="226" width="270" height="56" rx="6" fill="#1e3a8a"/>
+  </g>
+  <g font-size="11.5" fill="#ffffff" text-anchor="middle" font-family="Consolas, monospace">
+    <text x="612" y="248">0</text><text x="634" y="248">1</text><text x="656" y="248">2</text><text x="678" y="248" fill="#64748b">3</text>
+    <text x="700" y="248">4</text><text x="722" y="248">5</text><text x="744" y="248">6</text><text x="766" y="248" fill="#64748b">7</text>
+    <text x="788" y="248">8</text><text x="810" y="248">9</text><text x="834" y="248">10</text>
+  </g>
+  <g>
+    <circle cx="612" cy="266" r="5" fill="#f97316"/><circle cx="634" cy="266" r="5" fill="#f97316"/><circle cx="656" cy="266" r="5" fill="#f97316"/>
+    <circle cx="678" cy="266" r="5" fill="#475569"/>
+    <circle cx="700" cy="266" r="5" fill="#f97316"/><circle cx="722" cy="266" r="5" fill="#f97316"/><circle cx="744" cy="266" r="5" fill="#f97316"/>
+    <circle cx="766" cy="266" r="5" fill="#475569"/>
+    <circle cx="788" cy="266" r="5" fill="#f97316"/><circle cx="810" cy="266" r="5" fill="#f97316"/><circle cx="834" cy="266" r="5" fill="#f97316"/>
+  </g>
+  <text x="666" y="306" text-anchor="start" font-size="12.5" fill="#bfdbfe">servo channels used: 0–2 · 4–6 · 8–10</text>
+
+  <!-- I2C wires -->
+  <g stroke-width="4" fill="none" stroke-linecap="round">
+    <line x1="340" y1="111" x2="490" y2="111" stroke="#dc2626"/>
+    <line x1="340" y1="155" x2="490" y2="155" stroke="#111827"/>
+    <line x1="340" y1="199" x2="490" y2="199" stroke="#2563eb"/>
+    <line x1="340" y1="243" x2="490" y2="243" stroke="#ca8a04"/>
+  </g>
+  <text x="415" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">I²C bus (2 wires + power)</text>
+
+  <!-- Grove Vision AI on the same bus -->
+  <rect x="330" y="372" width="260" height="96" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="460" y="402" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">Grove Vision AI V2</text>
+  <text x="460" y="424" text-anchor="middle" font-size="12.5" fill="#334155">on-board NPU runs detection models,</text>
+  <text x="460" y="442" text-anchor="middle" font-size="12.5" fill="#334155">sends results only (not frames)</text>
+  <g stroke-width="3" fill="none" stroke-dasharray="6 5">
+    <path d="M430 199 L430 368" stroke="#2563eb"/>
+    <path d="M470 243 L470 368" stroke="#ca8a04"/>
+  </g>
+  <text x="420" y="330" text-anchor="end" font-size="12" fill="#64748b">same SDA / SCL</text>
+
+  <!-- servo power -->
+  <rect x="730" y="372" width="180" height="96" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="820" y="404" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">5 V supply</text>
+  <text x="820" y="426" text-anchor="middle" font-size="12.5" fill="#334155">servo power only;</text>
+  <text x="820" y="444" text-anchor="middle" font-size="12.5" fill="#334155">ground shared with XIAO</text>
+  <path d="M880 372 L880 184" stroke="#16a34a" stroke-width="4" fill="none"/>
+
+  <!-- servo cables -->
+  <path d="M155 468 L155 495 L650 495 L650 286" stroke="#f97316" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="400" y="488" text-anchor="middle" font-size="12" fill="#c2410c" font-weight="600">servo cables to channels 0–2, 4–6, 8–10</text>
+
+  <!-- servos -->
+  <rect x="40" y="372" width="230" height="96" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="155" y="404" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">9 hobby servos</text>
+  <text x="155" y="426" text-anchor="middle" font-size="12.5" fill="#334155">ears · eyes · eyelids · head</text>
+  <text x="155" y="444" text-anchor="middle" font-size="12.5" fill="#334155">3-wire: signal · V+ · GND</text>
+
+  <text x="480" y="540" text-anchor="middle" font-size="13" fill="#475569">Two I²C wires let one tiny board steer 9 servos and read a vision module. Servos draw their current from the separate 5 V supply, never from the board.</text>
+</svg>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="700" viewBox="0 0 960 700" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2f5bea"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9333ea"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="700" rx="16" fill="#ffffff"/>
+
+  <!-- ===== Meta Quest 3 ===== -->
+  <rect x="270" y="20" width="420" height="140" rx="12" fill="#eef2ff" stroke="#2f5bea" stroke-width="2"/>
+  <g text-anchor="middle">
+    <text x="480" y="50" font-size="19" font-weight="700" fill="#0f172a">Meta Quest 3</text>
+    <text x="480" y="74" font-size="15" font-weight="600" fill="#2f5bea">Recording state machine</text>
+    <text x="480" y="100" font-size="14.5" fill="#334155">Records head pose, both controller poses</text>
+    <text x="480" y="120" font-size="14.5" fill="#334155">and the head stereo camera (USB-C)</text>
+    <text x="480" y="146" font-size="13" fill="#475569" font-family="Consolas, monospace">Idle → Recording → Review → Uploading</text>
+  </g>
+
+  <!-- ===== BLE links ===== -->
+  <g stroke="#9333ea" stroke-width="2.2" stroke-dasharray="7 6" fill="none" marker-start="url(#arrow-purple)" marker-end="url(#arrow-purple)">
+    <path d="M350 164 L238 236"/>
+    <path d="M610 164 L722 236"/>
+  </g>
+  <g text-anchor="middle" font-size="14" fill="#9333ea" font-weight="600">
+    <text x="480" y="196">BLE</text>
+    <text x="480" y="216" font-weight="500" font-size="13">button presses ↑ · start / stop ↓</text>
+  </g>
+
+  <!-- ===== UMI Device (left) ===== -->
+  <g transform="translate(24 240)">
+    <rect width="420" height="250" rx="12" fill="#ecfbf8" stroke="#0f8a7e" stroke-width="2"/>
+    <text x="20" y="30" font-size="17" font-weight="700" fill="#0f6b62">UMI Device · left</text>
+    <rect x="20" y="48" width="180" height="112" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <g text-anchor="middle">
+      <text x="110" y="76" font-size="15.5" font-weight="700" fill="#0f172a">Raspberry Pi 4</text>
+      <text x="110" y="100" font-size="13.5" fill="#334155">Recorder</text>
+      <text x="110" y="121" font-size="13.5" fill="#334155">H.264 hardware encoder</text>
+      <text x="110" y="142" font-size="13.5" fill="#334155">microSD storage</text>
+    </g>
+    <rect x="236" y="48" width="164" height="44" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="318" y="66" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0f172a">2× UVC wrist camera</text>
+    <text x="318" y="84" text-anchor="middle" font-size="12.5" fill="#475569">USB · 640×480</text>
+    <rect x="236" y="100" width="164" height="26" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="318" y="118" text-anchor="middle" font-size="13.5" fill="#0f172a">Membrane keyboard</text>
+    <rect x="236" y="134" width="164" height="26" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="318" y="152" text-anchor="middle" font-size="13.5" fill="#0f172a">3S battery (power)</text>
+    <g stroke="#475569" stroke-width="1.6" marker-end="url(#arrow-gray)">
+      <line x1="236" y1="70" x2="203" y2="70"/>
+      <line x1="236" y1="113" x2="203" y2="113"/>
+      <line x1="236" y1="147" x2="203" y2="147"/>
+    </g>
+    <g font-size="13.5" fill="#334155">
+      <text x="20" y="196">◆ Quest controller mounted on top → pose</text>
+      <text x="20" y="222">◆ ArUco markers on fingers → Gripper State</text>
+    </g>
+  </g>
+
+  <!-- ===== UMI Device (right) ===== -->
+  <g transform="translate(516 240)">
+    <rect width="420" height="250" rx="12" fill="#ecfbf8" stroke="#0f8a7e" stroke-width="2"/>
+    <text x="20" y="30" font-size="17" font-weight="700" fill="#0f6b62">UMI Device · right</text>
+    <rect x="20" y="48" width="180" height="112" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <g text-anchor="middle">
+      <text x="110" y="76" font-size="15.5" font-weight="700" fill="#0f172a">Raspberry Pi 4</text>
+      <text x="110" y="100" font-size="13.5" fill="#334155">Recorder</text>
+      <text x="110" y="121" font-size="13.5" fill="#334155">H.264 hardware encoder</text>
+      <text x="110" y="142" font-size="13.5" fill="#334155">microSD storage</text>
+    </g>
+    <rect x="236" y="48" width="164" height="44" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="318" y="66" text-anchor="middle" font-size="13.5" font-weight="600" fill="#0f172a">2× UVC wrist camera</text>
+    <text x="318" y="84" text-anchor="middle" font-size="12.5" fill="#475569">USB · 640×480</text>
+    <rect x="236" y="100" width="164" height="26" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="318" y="118" text-anchor="middle" font-size="13.5" fill="#0f172a">Membrane keyboard</text>
+    <rect x="236" y="134" width="164" height="26" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+    <text x="318" y="152" text-anchor="middle" font-size="13.5" fill="#0f172a">3S battery (power)</text>
+    <g stroke="#475569" stroke-width="1.6" marker-end="url(#arrow-gray)">
+      <line x1="236" y1="70" x2="203" y2="70"/>
+      <line x1="236" y1="113" x2="203" y2="113"/>
+      <line x1="236" y1="147" x2="203" y2="147"/>
+    </g>
+    <g font-size="13.5" fill="#334155">
+      <text x="20" y="196">◆ Quest controller mounted on top → pose</text>
+      <text x="20" y="222">◆ ArUco markers on fingers → Gripper State</text>
+    </g>
+  </g>
+
+  <!-- ===== Wi-Fi upload bus ===== -->
+  <g stroke="#2f5bea" stroke-width="2.2" stroke-dasharray="7 6" fill="none">
+    <path d="M690 84 L944 84 L944 530"/>
+    <path d="M234 490 L234 530"/>
+    <path d="M726 490 L726 530"/>
+    <path d="M944 530 L164 530"/>
+    <path d="M164 530 L164 564" marker-end="url(#arrow-blue)"/>
+  </g>
+  <text x="480" y="522" text-anchor="middle" font-size="13.5" font-weight="600" fill="#2f5bea">Wi-Fi upload after each episode</text>
+
+  <!-- ===== Lab server → post-processing → dataset ===== -->
+  <rect x="24" y="568" width="280" height="112" rx="12" fill="#f8fafc" stroke="#64748b" stroke-width="1.6"/>
+  <g text-anchor="middle">
+    <text x="164" y="606" font-size="16.5" font-weight="700" fill="#0f172a">Lab server</text>
+    <text x="164" y="630" font-size="13.5" fill="#334155">Labelled episodes from the</text>
+    <text x="164" y="650" font-size="13.5" fill="#334155">headset and both devices</text>
+  </g>
+
+  <rect x="340" y="568" width="280" height="112" rx="12" fill="#faf5ff" stroke="#9333ea" stroke-width="1.6"/>
+  <text x="480" y="596" text-anchor="middle" font-size="16.5" font-weight="700" fill="#0f172a">Post-processing</text>
+  <g font-size="13.5" fill="#334155">
+    <text x="360" y="621">• align streams by timestamp</text>
+    <text x="360" y="642">• ArUco markers → Gripper State</text>
+    <text x="360" y="663">• controller pose → gripper pose</text>
+  </g>
+
+  <rect x="656" y="568" width="280" height="112" rx="12" fill="#ecfbf8" stroke="#0f8a7e" stroke-width="1.6"/>
+  <g text-anchor="middle">
+    <text x="796" y="606" font-size="16.5" font-weight="700" fill="#0f172a">Training dataset</text>
+    <text x="796" y="630" font-size="13.5" fill="#334155">Synchronized images, poses</text>
+    <text x="796" y="650" font-size="13.5" fill="#334155">and Gripper States</text>
+  </g>
+
+  <g stroke="#475569" stroke-width="2" marker-end="url(#arrow-gray)">
+    <line x1="304" y1="624" x2="336" y2="624"/>
+    <line x1="620" y1="624" x2="652" y2="624"/>
+  </g>
+</svg>

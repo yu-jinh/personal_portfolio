@@ -1,34 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { useTranslation } from 'react-i18next'
+import { HashRouter } from 'react-router-dom'
 import './locales'
 import './styles.css'
-import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import Projects from './components/Projects.jsx'
-import Skills from './components/Skills.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
+import App from './App.jsx'
 
-function Title() {
-  const { t, i18n } = useTranslation()
-  React.useEffect(() => {
-    document.title = t('meta.title')
-    document.documentElement.lang = i18n.language === 'zh' ? 'zh-CN' : 'en'
-  }, [t, i18n.language])
-  return null
-}
-
+// HashRouter keeps project URLs (#/projects/<slug>) working on GitHub Pages
+// without a 404 redirect hack. See docs/adr/0002-project-pages.md.
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Title />
-    <Navbar />
-    <main>
-      <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
-    </main>
-    <Footer />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>,
 )

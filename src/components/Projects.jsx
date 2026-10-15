@@ -1,63 +1,64 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Icon from './Icon.jsx'
+import ProjectCover from './ProjectCover.jsx'
+import SectionHeader from './SectionHeader.jsx'
+import { CATEGORIES, WORK } from '../data/projects.js'
+import { getPost } from '../lib/content.js'
 
-const COLLECTION_KEYS = ['umi', 'ego']
-const INTERACTION_KEYS = ['teleop', 'coglet']
-
-function VideoSlot({ text }) {
+export function ProjectCard({ project }) {
+  const { t, i18n } = useTranslation()
+  const post = getPost(project.slug, i18n.language)
   return (
-    <div className="video-slot">
-      <span className="video-slot-icon">▶</span>
-      <span>{text}</span>
-    </div>
-  )
-}
-
-function ProjectCard({ k }) {
-  const { t } = useTranslation()
-  const [open, setOpen] = useState(false)
-  return (
-    <article className="card">
-      <VideoSlot text={t(`projects.${k}.videoPlaceholder`)} />
+    <Link className="card project-card" to={`/projects/${project.slug}`}>
+      <ProjectCover project={project} alt={post.title} />
       <div className="card-body">
-        <p className="video-label">{t('projectCard.videoLabel')}</p>
-        <h3>{t(`projects.${k}.title`)}</h3>
-        <p className="summary">{t(`projects.${k}.summary`)}</p>
-        <div className="tags">
-          {(t(`projects.${k}.stack`, { returnObjects: true }) || []).map((s) => (
-            <span className="tag" key={s}>{s}</span>
-          ))}
-        </div>
-        <p className="role"><strong>{t('projectCard.roleLabel')}：</strong>{t(`projects.${k}.role`)}</p>
-        <button className="link-btn" onClick={() => setOpen(!open)}>
-          {open ? t('projectCard.hideDetails') : t('projectCard.showDetails')}
-        </button>
-        {open && <p className="details">{t(`projects.${k}.details`)}</p>}
+        <p className={`category category-${project.category}`}>{t(`categories.${project.category}`)}</p>
+        <h3>{post.title}</h3>
+        <p className="card-summary">{post.summary}</p>
+        <ul className="tags">
+          {project.stack.slice(0, 4).map((s) => <li className="tag" key={s}>{s}</li>)}
+        </ul>
+        <span className="card-cta">
+          {t('projectsSection.readMore')} <Icon name="arrowRight" size={16} />
+        </span>
       </div>
-    </article>
-  )
-}
-
-function Group({ groupKey, keys }) {
-  const { t } = useTranslation()
-  return (
-    <div className="group">
-      <h3 className="group-title">{t(`projectGroups.${groupKey}.title`)}</h3>
-      <p className="group-subtitle">{t(`projectGroups.${groupKey}.subtitle`)}</p>
-      <div className="cards">
-        {keys.map((k) => <ProjectCard key={k} k={k} />)}
-      </div>
-    </div>
+    </Link>
   )
 }
 
 export default function Projects() {
   const { t } = useTranslation()
+  const [filter, setFilter] = useState('all')
+  const shown = filter === 'all' ? WORK : WORK.filter((p) => p.category === filter)
+  // Only offer filters that have at least one work project behind them.
+  const filters = ['all', ...CATEGORIES.filter((c) => WORK.some((p) => p.category === c))]
+
   return (
     <section id="projects" className="section">
-      <h2>{t('nav.projects')}</h2>
-      <Group groupKey="collection" keys={COLLECTION_KEYS} />
-      <Group groupKey="interaction" keys={INTERACTION_KEYS} />
+      <div className="container">
+        <SectionHeader
+          eyebrow={t('projectsSection.eyebrow')}
+          title={t('projectsSection.title')}
+          subtitle={t('projectsSection.subtitle')}
+        />
+        <div className="filters" role="group" aria-label={t('projectsSection.filterLabel')}>
+          {filters.map((key) => (
+            <button
+              key={key}
+              className={`filter${filter === key ? ' is-active' : ''}`}
+              aria-pressed={filter === key}
+              onClick={() => setFilter(key)}
+            >
+              {key === 'all' ? t('projectsSection.all') : t(`categories.${key}`)}
+            </button>
+          ))}
+        </div>
+        <div className="project-grid">
+          {shown.map((p) => <ProjectCard key={p.slug} project={p} />)}
+        </div>
+      </div>
     </section>
   )
 }

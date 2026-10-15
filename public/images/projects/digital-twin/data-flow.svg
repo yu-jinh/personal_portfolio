@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+  </defs>
+  <rect width="960" height="560" rx="16" fill="#ffffff"/>
+
+  <!-- column labels -->
+  <g font-size="12.5" font-weight="700" letter-spacing="0.06em">
+    <text x="40" y="36" fill="#64748b">REAL WORLD</text>
+    <text x="368" y="36" fill="#64748b">TRANSPORT</text>
+    <text x="620" y="36" fill="#2f5bea">INSIDE THE QUEST HEADSET</text>
+  </g>
+
+  <!-- sources -->
+  <g>
+    <rect x="24" y="52" width="264" height="74" rx="10" fill="#ecfbf8" stroke="#0f8a7e" stroke-width="1.6"/>
+    <text x="40" y="80" font-size="15" font-weight="700" fill="#0f172a">Stereo camera (ZED 2i)</text>
+    <text x="40" y="104" font-size="13" fill="#334155">left + right video, 2K</text>
+
+    <rect x="24" y="142" width="264" height="74" rx="10" fill="#ecfbf8" stroke="#0f8a7e" stroke-width="1.6"/>
+    <text x="40" y="170" font-size="15" font-weight="700" fill="#0f172a">Depth camera</text>
+    <text x="40" y="194" font-size="13" fill="#334155">colour + depth video</text>
+
+    <rect x="24" y="232" width="264" height="74" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="1.6"/>
+    <text x="40" y="260" font-size="15" font-weight="700" fill="#0f172a">Point-cloud file (.ply)</text>
+    <text x="40" y="284" font-size="13" fill="#334155">static scan, millions of points</text>
+
+    <rect x="24" y="322" width="264" height="74" rx="10" fill="#fff8e6" stroke="#ca8a04" stroke-width="1.6"/>
+    <text x="40" y="350" font-size="15" font-weight="700" fill="#0f172a">Robot (xArm 7 · Theta)</text>
+    <text x="40" y="374" font-size="13" fill="#334155">joint angles, 15 Hz</text>
+
+    <rect x="24" y="412" width="264" height="74" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.6"/>
+    <text x="40" y="440" font-size="15" font-weight="700" fill="#0f172a">Perception (camera + GPU)</text>
+    <text x="40" y="464" font-size="13" fill="#334155">object 6D poses, robot frame</text>
+  </g>
+
+  <!-- transport -->
+  <rect x="340" y="52" width="230" height="208" rx="12" fill="#eef2ff" stroke="#2f5bea" stroke-width="1.8"/>
+  <text x="455" y="128" text-anchor="middle" font-size="15.5" font-weight="700" fill="#0f172a">LiveKit room</text>
+  <text x="455" y="152" text-anchor="middle" font-size="13" fill="#334155">video tracks + data</text>
+  <text x="455" y="176" text-anchor="middle" font-size="13" fill="#334155">(same infrastructure as</text>
+  <text x="455" y="194" text-anchor="middle" font-size="13" fill="#334155">the teleop platform)</text>
+
+  <rect x="340" y="322" width="230" height="164" rx="12" fill="#eef2ff" stroke="#2f5bea" stroke-width="1.8"/>
+  <text x="455" y="390" text-anchor="middle" font-size="15.5" font-weight="700" fill="#0f172a">LiveKit data channel</text>
+  <text x="455" y="414" text-anchor="middle" font-size="13" fill="#334155">joint states · object poses</text>
+
+  <rect x="340" y="500" width="230" height="44" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="1.4"/>
+  <text x="455" y="527" text-anchor="middle" font-size="13" fill="#334155">URDF models: S3 bucket, at runtime</text>
+
+  <!-- renderers -->
+  <g>
+    <rect x="620" y="52" width="316" height="74" rx="10" fill="#ffffff" stroke="#2f5bea" stroke-width="1.6"/>
+    <text x="636" y="80" font-size="15" font-weight="700" fill="#0f172a">Stereo shader</text>
+    <text x="636" y="104" font-size="13" fill="#334155">left image → left eye, right → right eye</text>
+
+    <rect x="620" y="142" width="316" height="74" rx="10" fill="#ffffff" stroke="#2f5bea" stroke-width="1.6"/>
+    <text x="636" y="170" font-size="15" font-weight="700" fill="#0f172a">Depth point-cloud renderer</text>
+    <text x="636" y="194" font-size="13" fill="#334155">one GPU point per pixel, pushed by depth</text>
+
+    <rect x="620" y="232" width="316" height="74" rx="10" fill="#ffffff" stroke="#2f5bea" stroke-width="1.6"/>
+    <text x="636" y="260" font-size="15" font-weight="700" fill="#0f172a">PLY point-cloud renderer</text>
+    <text x="636" y="284" font-size="13" fill="#334155">GPU buffer, grab-and-scale box</text>
+
+    <rect x="620" y="322" width="316" height="74" rx="10" fill="#ffffff" stroke="#2f5bea" stroke-width="1.6"/>
+    <text x="636" y="350" font-size="15" font-weight="700" fill="#0f172a">URDF robot twin</text>
+    <text x="636" y="374" font-size="13" fill="#334155">joints follow the real robot</text>
+
+    <rect x="620" y="412" width="316" height="74" rx="10" fill="#ffffff" stroke="#2f5bea" stroke-width="1.6"/>
+    <text x="636" y="440" font-size="15" font-weight="700" fill="#0f172a">Object markers</text>
+    <text x="636" y="464" font-size="13" fill="#334155">boxes placed on the twin's table</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#475569" stroke-width="1.7" fill="none" marker-end="url(#a)">
+    <line x1="288" y1="89" x2="336" y2="89"/>
+    <line x1="288" y1="179" x2="336" y2="179"/>
+    <line x1="570" y1="89" x2="616" y2="89"/>
+    <line x1="570" y1="179" x2="616" y2="179"/>
+    <path d="M288 284 L 600 284 L 600 269 L 616 269" stroke-dasharray="5 5"/>
+    <line x1="288" y1="359" x2="336" y2="359"/>
+    <line x1="288" y1="449" x2="336" y2="449"/>
+    <line x1="570" y1="359" x2="616" y2="359"/>
+    <line x1="570" y1="449" x2="616" y2="449"/>
+    <path d="M570 522 L 600 522 L 600 386 L 616 386"/>
+  </g>
+  <text x="455" y="278" text-anchor="middle" font-size="12" fill="#64748b" font-weight="600">file loaded on the headset</text>
+</svg>

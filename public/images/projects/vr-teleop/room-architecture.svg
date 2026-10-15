@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="m-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2f5bea"/></marker>
+    <marker id="m-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0f8a7e"/></marker>
+    <marker id="m-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9333ea"/></marker>
+    <marker id="m-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#64748b"/></marker>
+  </defs>
+
+  <rect width="960" height="660" rx="16" fill="#ffffff"/>
+
+  <!-- ===== infrastructure ===== -->
+  <rect x="24" y="20" width="300" height="84" rx="12" fill="#f8fafc" stroke="#64748b" stroke-width="1.6"/>
+  <text x="44" y="50" font-size="16.5" font-weight="700" fill="#0f172a">Token service</text>
+  <text x="44" y="73" font-size="13.5" fill="#334155">Issues room access to</text>
+  <text x="44" y="92" font-size="13.5" fill="#334155">authenticated users only</text>
+
+  <rect x="636" y="20" width="300" height="84" rx="12" fill="#f8fafc" stroke="#64748b" stroke-width="1.6"/>
+  <text x="656" y="50" font-size="16.5" font-weight="700" fill="#0f172a">LiveKit server (self-hosted)</text>
+  <text x="656" y="73" font-size="13.5" fill="#334155">Creates rooms and relays every</text>
+  <text x="656" y="92" font-size="13.5" fill="#334155">audio, video and data stream</text>
+
+  <path d="M174 104 L174 150" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5 5" fill="none" marker-end="url(#m-gray)"/>
+  <text x="186" y="134" font-size="12.5" fill="#64748b" font-weight="600">access token</text>
+  <path d="M786 104 L786 150" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5 5" fill="none" marker-end="url(#m-gray)"/>
+  <text x="798" y="134" font-size="12.5" fill="#64748b" font-weight="600">hosts the room</text>
+
+  <!-- ===== the room ===== -->
+  <rect x="24" y="154" width="912" height="486" rx="16" fill="#faf5ff" stroke="#9333ea" stroke-width="2" stroke-dasharray="9 6"/>
+  <text x="44" y="184" font-size="15" font-weight="700" fill="#7e22ce">ROOM</text>
+  <text x="96" y="184" font-size="13.5" fill="#7e22ce">every member is a participant and can publish or subscribe</text>
+
+  <!-- teleoperator -->
+  <rect x="48" y="206" width="280" height="186" rx="12" fill="#eef2ff" stroke="#2f5bea" stroke-width="2"/>
+  <text x="68" y="236" font-size="17" font-weight="700" fill="#0f172a">Teleoperator</text>
+  <text x="68" y="258" font-size="13.5" font-weight="600" fill="#2f5bea">Meta Quest app (Unity + OpenXR)</text>
+  <g font-size="13" fill="#334155">
+    <text x="68" y="286">Publishes</text>
+    <text x="80" y="306">• teleop messages, 200 Hz</text>
+    <text x="80" y="325">• headset camera and microphone</text>
+    <text x="68" y="350">Subscribes</text>
+    <text x="80" y="370">• robot cameras, audio and ACKs</text>
+  </g>
+
+  <!-- robots -->
+  <rect x="612" y="206" width="300" height="96" rx="12" fill="#ecfbf8" stroke="#0f8a7e" stroke-width="2.4"/>
+  <text x="632" y="234" font-size="16" font-weight="700" fill="#0f172a">Robot A <tspan font-weight="500" fill="#0f6b62" font-size="13.5">· selected</tspan></text>
+  <text x="632" y="256" font-size="13" fill="#334155">Robot bridge → this robot's controller</text>
+  <text x="632" y="278" font-size="13" fill="#334155">Publishes cameras (30 fps), mic, ACKs</text>
+
+  <rect x="612" y="316" width="300" height="74" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="1.6"/>
+  <text x="632" y="344" font-size="16" font-weight="700" fill="#334155">Robot B</text>
+  <text x="632" y="368" font-size="13" fill="#64748b">Not selected: holds its pose</text>
+
+  <rect x="612" y="404" width="300" height="74" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <text x="632" y="432" font-size="16" font-weight="700" fill="#334155">Robot C …</text>
+  <text x="632" y="456" font-size="13" fill="#64748b">Up to 3 robots per room tested</text>
+
+  <!-- teleop flow -->
+  <path d="M328 238 L606 238" stroke="#2f5bea" stroke-width="3" fill="none" marker-end="url(#m-blue)"/>
+  <text x="467" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#2f5bea">teleop messages · 200 Hz · lossy</text>
+  <path d="M606 276 L332 276" stroke="#0f8a7e" stroke-width="2.2" stroke-dasharray="7 5" fill="none" marker-end="url(#m-green)"/>
+  <text x="467" y="298" text-anchor="middle" font-size="13" font-weight="600" fill="#0f8a7e">camera video 30 fps · audio · ACKs (reliable)</text>
+  <path d="M328 352 L606 352" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="3 5" fill="none" marker-end="url(#m-gray)"/>
+  <text x="467" y="344" text-anchor="middle" font-size="12.5" fill="#64748b">one click switches the target robot</text>
+
+  <!-- observers -->
+  <rect x="356" y="496" width="236" height="124" rx="12" fill="#ffffff" stroke="#0f8a7e" stroke-width="1.6"/>
+  <text x="374" y="523" font-size="16" font-weight="700" fill="#0f172a">Observers <tspan font-weight="500" fill="#0f6b62" font-size="13.5">· view-only</tspan></text>
+  <g font-size="13" fill="#334155">
+    <text x="374" y="547">• Data Collection Dashboard</text>
+    <text x="386" y="565">(web, also in the headset)</text>
+    <text x="374" y="586">• Other headsets</text>
+    <text x="374" y="607" fill="#64748b">Robot cameras + operator view</text>
+  </g>
+  <path d="M612 452 C 560 452, 520 470, 500 492" stroke="#0f8a7e" stroke-width="2.2" stroke-dasharray="7 5" fill="none" marker-end="url(#m-green)"/>
+  <text x="560" y="438" text-anchor="middle" font-size="13" font-weight="600" fill="#0f8a7e">live video</text>
+
+  <!-- cloud agent -->
+  <rect x="48" y="476" width="280" height="110" rx="12" fill="#ffffff" stroke="#9333ea" stroke-width="1.6"/>
+  <text x="68" y="506" font-size="16" font-weight="700" fill="#0f172a">Cloud voice agent</text>
+  <text x="68" y="531" font-size="13" fill="#334155">Talks to the operator</text>
+  <text x="68" y="551" font-size="13" fill="#334155">(TTS text + audio)</text>
+  <path d="M188 472 L188 396" stroke="#9333ea" stroke-width="2" fill="none" marker-start="url(#m-purple)" marker-end="url(#m-purple)"/>
+  <text x="200" y="440" font-size="12.5" font-weight="600" fill="#9333ea">voice</text>
+</svg>

@@ -1,10 +1,23 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TODO: 个人简介一句话（用于搜索引擎摘要）" />
-    <title>TODO: 姓名 | 机器人工程师</title>
+    <meta name="description" content="Jinhong Yu — Robotics Software Engineer building VR teleoperation, robot data collection systems and on-device AI." />
+    <meta property="og:title" content="Jinhong Yu | Robotics Software Engineer" />
+    <meta property="og:description" content="VR teleoperation, robot data collection, XR human–robot interaction and edge AI." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c1018" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Jinhong Yu | Robotics Software Engineer</title>
+    <script>
+      // Apply the saved theme before first paint so there is no light/dark flash.
+      try {
+        var theme = localStorage.getItem('theme')
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="832" height="1216" viewBox="0 0 832 1216" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="416" height="1216" fill="#d63a8f"/>
+  <rect x="416" y="0" width="416" height="1216" fill="#b5803a"/>
+  <line x1="416" y1="0" x2="416" y2="1216" stroke="#ffffff" stroke-width="6" stroke-dasharray="24 18"/>
+  <g fill="#ffffff" text-anchor="middle">
+    <circle cx="208" cy="560" r="62" fill="rgba(255,255,255,0.22)"/>
+    <text x="208" y="582" font-size="64" font-weight="700">1</text>
+    <text x="208" y="690" font-size="44" font-weight="600">Character A</text>
+    <circle cx="624" cy="560" r="62" fill="rgba(255,255,255,0.22)"/>
+    <text x="624" y="582" font-size="64" font-weight="700">2</text>
+    <text x="624" y="690" font-size="44" font-weight="600">Character B</text>
+  </g>
+</svg>

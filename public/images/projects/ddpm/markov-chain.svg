@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="260" viewBox="0 0 880 260" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="fwd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2f5bea"/>
+    </marker>
+    <marker id="rev" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9333ea"/>
+    </marker>
+    <pattern id="noise" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#8a93a6"/>
+      <rect width="2" height="2" fill="#c3c9d6"/>
+      <rect x="3" y="3" width="2" height="2" fill="#5d6577"/>
+      <rect x="4" y="0" width="2" height="2" fill="#a9b0bf"/>
+      <rect x="0" y="4" width="2" height="2" fill="#747d90"/>
+    </pattern>
+  </defs>
+
+  <rect width="880" height="260" rx="16" fill="#ffffff"/>
+
+  <!-- forward (top, solid) -->
+  <g fill="none" stroke="#2f5bea" stroke-width="2.2" marker-end="url(#fwd)">
+    <path d="M98 108 Q 132 70 167 108"/>
+    <path d="M223 108 Q 252 78 280 104"/>
+    <path d="M330 104 Q 358 78 392 108"/>
+    <path d="M448 108 Q 500 58 552 108"/>
+    <path d="M608 108 Q 636 78 664 104"/>
+    <path d="M714 104 Q 742 78 777 108"/>
+  </g>
+
+  <!-- reverse (bottom, dashed) -->
+  <g fill="none" stroke="#9333ea" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#rev)">
+    <path d="M167 152 Q 132 190 98 152"/>
+    <path d="M280 156 Q 252 182 223 152"/>
+    <path d="M392 152 Q 358 182 330 156"/>
+    <path d="M552 152 Q 500 202 448 152"/>
+    <path d="M664 156 Q 636 182 608 152"/>
+    <path d="M777 152 Q 742 182 714 156"/>
+  </g>
+
+  <!-- nodes: from data (blue) to pure noise -->
+  <circle cx="70" cy="130" r="32" fill="#2f5bea"/>
+  <circle cx="195" cy="130" r="32" fill="#4a68d6"/>
+  <circle cx="420" cy="130" r="32" fill="#6274b8"/>
+  <circle cx="580" cy="130" r="32" fill="#717d9f"/>
+  <circle cx="805" cy="130" r="32" fill="url(#noise)"/>
+
+  <g font-family="Cambria, 'Times New Roman', serif" font-style="italic" fill="#ffffff" text-anchor="middle" font-size="26">
+    <text x="66" y="139">x<tspan font-size="16" dy="6">0</tspan></text>
+    <text x="191" y="139">x<tspan font-size="16" dy="6">1</tspan></text>
+    <text x="414" y="139">x<tspan font-size="15" dy="6">t−1</tspan></text>
+    <text x="577" y="139">x<tspan font-size="16" dy="6">t</tspan></text>
+    <text x="801" y="139" fill="#ffffff" stroke="#3a4152" stroke-width="3" paint-order="stroke">x<tspan font-size="16" dy="6">T</tspan></text>
+  </g>
+
+  <g fill="#64748b" font-size="30" text-anchor="middle">
+    <text x="305" y="139">···</text>
+    <text x="689" y="139">···</text>
+  </g>
+
+  <!-- step labels between x_{t-1} and x_t -->
+  <g font-family="Cambria, 'Times New Roman', serif" font-size="19" text-anchor="middle">
+    <text x="500" y="52" fill="#2f5bea"><tspan font-style="italic">q</tspan>(<tspan font-style="italic">x<tspan font-size="13" dy="5">t</tspan></tspan><tspan dy="-5"> | </tspan><tspan font-style="italic">x<tspan font-size="13" dy="5">t−1</tspan></tspan><tspan dy="-5">)</tspan></text>
+    <text x="500" y="222" fill="#9333ea"><tspan font-style="italic">p<tspan font-size="13" dy="5">θ</tspan></tspan><tspan dy="-5">(</tspan><tspan font-style="italic">x<tspan font-size="13" dy="5">t−1</tspan></tspan><tspan dy="-5"> | </tspan><tspan font-style="italic">x<tspan font-size="13" dy="5">t</tspan></tspan><tspan dy="-5">)</tspan></text>
+  </g>
+
+  <!-- legends -->
+  <g font-size="14" font-weight="600">
+    <text x="24" y="34" fill="#2f5bea">→ Forward diffusion: fixed, adds Gaussian noise</text>
+    <text x="24" y="244" fill="#9333ea">← Reverse process: learned, removes noise</text>
+  </g>
+  <g font-size="13" fill="#64748b" text-anchor="middle">
+    <text x="70" y="186">data</text>
+    <text x="805" y="186">𝒩(0, I)</text>
+  </g>
+</svg>

@@ -1,5 +1,25 @@
-node_modules/
+# The repo holds only what's needed to build the site; GitHub Actions builds
+# dist/ in CI and deploys it. The build output itself is never committed.
+
+# Build output and dependencies
 dist/
+node_modules/
 .npm-cache/
-.scratch/
+
+# Local tooling and AI-agent setup (not needed for the build)
+.claude/
 .agents/
+.scratch/
+AGENTS.md
+
+# Design notes kept locally
+GLOSSARY.md
+docs/
+
+# Posts taken off the site
+drafts/
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+*.log

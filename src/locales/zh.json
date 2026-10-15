@@ -1,92 +1,177 @@
 {
   "meta": {
-    "title": "TODO: 姓名 | 机器人工程师",
-    "description": "TODO: 个人简介一句话（用于搜索引擎摘要）"
+    "title": "Jinhong Yu | 机器人软件工程师"
+  },
+  "common": {
+    "present": "至今"
   },
   "nav": {
-    "home": "首页",
     "projects": "项目",
+    "experience": "经历",
     "skills": "技能",
     "contact": "联系",
-    "langToggle": "EN"
+    "langToggle": "EN",
+    "langLabel": "Switch to English",
+    "themeLabel": "切换浅色 / 深色主题",
+    "menu": "菜单",
+    "research": "调研"
   },
   "hero": {
-    "greeting": "你好，我是",
-    "name": "TODO: 姓名",
-    "nameEn": "TODO: 姓名拼音",
-    "tagline": "TODO: 一句话求职意向，例如：专注具身智能与机器人交互控制的工程师",
-    "education": "TODO: 学校 · 专业 · 毕业时间，例如：XX 大学 · 机器人工程 · 2026 届",
+    "eyebrow": "机器人软件工程师",
+    "name": "Jinhong Yu",
+    "headline": "我搭建让人能“教会”机器人的系统：VR 遥操作、机器人数据采集与端侧 AI。",
+    "summary": "创始团队机器人工程师，横跨 XR、嵌入式硬件与 AI 模型——从操作员戴上的头显，到机器人策略模型学习的数据集，全链路亲手实现。美国东北大学人工智能硕士。",
     "viewProjects": "查看项目",
-    "downloadResume": "下载简历"
+    "resume": "简历",
+    "focusLabel": "关注方向",
+    "focus": [
+      "VR 遥操作",
+      "机器人数据采集",
+      "XR 人机交互",
+      "端侧 AI",
+      "全栈 Web"
+    ],
+    "facts": [
+      {
+        "label": "现在",
+        "value": "全栈软件工程师 · SwiftShop"
+      },
+      {
+        "label": "此前",
+        "value": "创始机器人工程师 · Theta-intelligence"
+      },
+      {
+        "label": "学历",
+        "value": "人工智能硕士 · 美国东北大学"
+      }
+    ]
   },
-  "projectGroups": {
-    "collection": {
-      "title": "数据采集",
-      "subtitle": "为机器人策略训练采集高质量演示数据：从硬件搭建到录制、编码、上传的完整链路"
-    },
-    "interaction": {
-      "title": "交互控制",
-      "subtitle": "让人实时驱动设备：遥操作映射与自然语言控制"
+  "categories": {
+    "interaction": "交互控制",
+    "data": "数据采集",
+    "ai": "AI 与模型",
+    "web": "全栈开发"
+  },
+  "projectsSection": {
+    "eyebrow": "代表作品",
+    "title": "项目",
+    "subtitle": "我在工作中设计并交付的系统，每个都有独立的详细介绍：要解决的问题、我做了什么、系统如何协同。",
+    "filterLabel": "按类别筛选项目",
+    "all": "全部",
+    "readMore": "阅读详情"
+  },
+  "researchSection": {
+    "eyebrow": "文章",
+    "title": "调研与笔记",
+    "subtitle": "深入研究技术原理时写下的调研报告与学习笔记，以扩散模型为主。",
+    "read": "阅读文章",
+    "minRead_one": "约 {{count}} 分钟阅读",
+    "minRead_other": "约 {{count}} 分钟阅读",
+    "kinds": {
+      "survey": "技术调研",
+      "note": "学习笔记"
     }
   },
-  "projects": {
-    "umi": {
-      "title": "UMI 数据采集 · 自研手持设备",
-      "summary": "TODO: 一句话介绍，例如：自研手持采集设备，无线录制操作演示并自动上传至 dataset hub",
-      "role": "TODO: 你负责的部分，例如：硬件选型与结构设计、固件开发、上传链路",
-      "stack": ["Raspberry Pi 4", "无线录制", "Dataset Hub"],
-      "details": "TODO: 详细介绍：硬件方案、录制流程、数据格式、上传机制、采集规模（条数/时长）",
-      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径（B站/YouTube 嵌入链接，或 public/videos/umi.mp4）"
-    },
-    "ego": {
-      "title": "EGO 数采 · Quest 3 + 双目视觉",
-      "summary": "TODO: 一句话介绍，例如：基于 Meta Quest 3 手部追踪与外置 USB 双目摄像头的数据录制方案",
-      "role": "TODO: 你负责的部分，例如：录制管线、音视频编码同步、上传工具",
-      "stack": ["Meta Quest 3", "手部追踪", "双目摄像头", "音视频编码"],
-      "details": "TODO: 详细介绍：标定方案、时间同步策略、编码参数、数据规模",
-      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径"
-    },
-    "teleop": {
-      "title": "遥操作 · OpenXR + Unity + Quest",
-      "summary": "TODO: 一句话介绍，例如：基于 OpenXR 的机器人遥操作系统，动作实时映射",
-      "role": "TODO: 你负责的部分，例如：Unity 端动作捕捉、映射算法、通信链路",
-      "stack": ["OpenXR", "Unity", "Meta Quest"],
-      "details": "TODO: 详细介绍：自由度映射、延迟表现、支持的机型、演示场景",
-      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径"
-    },
-    "coglet": {
-      "title": "智能桌宠 · ESP32 + ESP-CLAW",
-      "summary": "TODO: 一句话介绍，例如：基于开源 coglet 桌宠硬件，用 ESP32 部署 ESP-CLAW 实现自然语言对话与控制",
-      "role": "TODO: 你负责的部分，例如：固件移植、对话链路、动作控制",
-      "stack": ["ESP32", "ESP-CLAW", "自然语言对话"],
-      "details": "TODO: 详细介绍：借用的开源部分、自研的部分、端侧部署的裁剪、交互效果",
-      "videoPlaceholder": "TODO: 演示视频链接或本地文件路径"
-    }
+  "project": {
+    "back": "全部项目",
+    "role": "我的职责",
+    "company": "公司",
+    "period": "时间",
+    "stack": "技术栈",
+    "prev": "上一个",
+    "next": "下一个",
+    "more": "更多项目",
+    "toc": "本页目录",
+    "backResearch": "全部调研与笔记"
   },
-  "projectCard": {
-    "roleLabel": "我的分工",
-    "showDetails": "展开详情",
-    "hideDetails": "收起详情",
-    "videoLabel": "演示视频"
+  "experienceSection": {
+    "eyebrow": "职业经历",
+    "title": "工作经历",
+    "subtitle": "机器人、XR 与 AI 工程，以及全栈 Web 开发。",
+    "related": "相关项目：",
+    "items": {
+      "swiftshop": {
+        "role": "全栈软件工程师",
+        "company": "SwiftShop",
+        "points": [
+          "开发电商平台：门店管理后台与面向顾客的微信小程序。"
+        ]
+      },
+      "theta": {
+        "role": "创始机器人工程师",
+        "company": "Theta-intelligence",
+        "points": [
+          "开发面向机器人的全栈 VR 遥操作平台，包括交互界面、混合现实（MR）、计算机视觉集成与外接 UVC 摄像头支持。",
+          "为 Meta Quest 开发 Android 原生插件，在设备端运行 ONNX 模型，包括基于 sherpa-onnx 的离线语音合成（TTS）。",
+          "设计并集成机器人数据采集硬件：基于 Meta Quest 的 UMI 设备与第一视角（Ego）感知平台。",
+          "基于树莓派与 Meta Quest 搭建端到端数据采集链路，同步录制视频、传感器与 IoT 数据，用于机器人学习。",
+          "开发机器人、XR 设备与远程操作站之间的实时多模态媒体传输基础设施。",
+          "在 ESP32（ESP-Claw）与树莓派（zero-Claw）上部署语音交互 AI 智能体，实现自然语言对话与机器人控制。"
+        ]
+      },
+      "cardinal": {
+        "role": "AI 模型工程实习生",
+        "company": "杉数科技（Cardinal Operations）",
+        "points": [
+          "为文生图 / 文生视频实验项目提供工程开发支持。",
+          "在有限硬件资源下使用 LoRA 与模型并行微调 Stable Diffusion。",
+          "部署文生视频流水线，重点解决多角色生成与角色一致性问题。"
+        ]
+      },
+      "neu": {
+        "role": "研究与教学助理",
+        "company": "美国东北大学",
+        "points": [
+          "负责作业批改与答疑；讲授扩散模型客座课程，获得良好反馈。",
+          "为实验室部署服务器，加速科研项目推进。",
+          "参与多个研究项目的实验设计、实现与运行，让项目负责人专注于创新思路。"
+        ]
+      }
+    }
   },
   "skillsSection": {
-    "title": "技能栈",
-    "subtitle": "TODO: 可按实际调整分组与条目",
+    "eyebrow": "技术栈",
+    "title": "技能",
+    "subtitle": "从机器人中间件、XR，到嵌入式硬件、AI 模型与 Web。",
     "groups": {
       "robotics": "机器人",
-      "embedded": "嵌入式",
-      "software": "软件"
+      "xr": "XR 开发",
+      "ai": "AI 与模型",
+      "embedded": "嵌入式与硬件",
+      "web": "Web",
+      "tools": "AI 辅助开发"
     }
   },
+  "educationSection": {
+    "eyebrow": "教育背景",
+    "title": "教育经历",
+    "items": [
+      {
+        "degree": "人工智能 硕士",
+        "school": "美国东北大学（Northeastern University）",
+        "department": "Khoury 计算机科学学院",
+        "years": "2021 – 2023"
+      },
+      {
+        "degree": "机械设计制造及其自动化 工学学士",
+        "school": "华南农业大学",
+        "department": "工程学院",
+        "years": "2013 – 2017"
+      }
+    ]
+  },
   "contactSection": {
-    "title": "联系我",
-    "subtitle": "TODO: 一句话，例如：正在求职，欢迎交流具身智能与机器人方向的机会",
-    "email": "TODO: 邮箱地址",
-    "github": "TODO: GitHub 主页链接",
-    "linkedin": "TODO: LinkedIn 主页链接",
-    "resumeNote": "TODO: 简历 PDF 文件放到 public/resume.pdf 后，此按钮即可下载"
+    "eyebrow": "联系我",
+    "title": "一起打造真正能被“教会”的机器人。",
+    "subtitle": "欢迎机器人、XR 与具身智能方向的工作机会与合作。邮件是联系我最快的方式。",
+    "email": "发送邮件"
+  },
+  "notFound": {
+    "title": "页面不存在",
+    "text": "你访问的页面不存在或已被移动。",
+    "home": "返回首页"
   },
   "footer": {
-    "builtWith": "Built with React · Deployed on GitHub Pages"
+    "rights": "© {{year}} Jinhong Yu"
   }
 }

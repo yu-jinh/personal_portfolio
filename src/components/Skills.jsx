@@ -1,27 +1,27 @@
 import { useTranslation } from 'react-i18next'
-
-// TODO: 按实际背景调整分组与条目（中英两版都要改，见 src/locales/*.json，这里只改 key 顺序不管文案）
-const GROUPS = [
-  { key: 'robotics', items: ['ROS / ROS 2', 'OpenXR', 'Unity', 'SLAM', 'Motion Mapping'] },
-  { key: 'embedded', items: ['ESP32', 'Raspberry Pi', 'USB Cameras', 'Sensor Calibration'] },
-  { key: 'software', items: ['Python', 'C++', 'React', 'Git'] },
-]
+import SectionHeader from './SectionHeader.jsx'
+import { SKILLS } from '../data/profile.js'
 
 export default function Skills() {
   const { t } = useTranslation()
   return (
-    <section id="skills" className="section">
-      <h2>{t('skillsSection.title')}</h2>
-      <p className="section-subtitle">{t('skillsSection.subtitle')}</p>
-      <div className="skill-groups">
-        {GROUPS.map((g) => (
-          <div className="skill-group" key={g.key}>
-            <h3>{t(`skillsSection.groups.${g.key}`)}</h3>
-            <div className="tags">
-              {g.items.map((item) => <span className="tag" key={item}>{item}</span>)}
+    <section id="skills" className="section section-alt">
+      <div className="container">
+        <SectionHeader
+          eyebrow={t('skillsSection.eyebrow')}
+          title={t('skillsSection.title')}
+          subtitle={t('skillsSection.subtitle')}
+        />
+        <div className="skill-grid">
+          {SKILLS.map((group) => (
+            <div className="card skill-card" key={group.key}>
+              <h3>{t(`skillsSection.groups.${group.key}`)}</h3>
+              <ul className="tags">
+                {group.items.map((item) => <li className="tag" key={item}>{item}</li>)}
+              </ul>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

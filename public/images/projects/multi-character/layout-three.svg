@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="832" height="1216" viewBox="0 0 832 1216" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="278" height="1216" fill="#2f5bea"/>
+  <rect x="278" y="0" width="277" height="1216" fill="#5b2bb5"/>
+  <rect x="555" y="0" width="277" height="1216" fill="#8c98b8"/>
+  <g stroke="#ffffff" stroke-width="6" stroke-dasharray="24 18">
+    <line x1="278" y1="0" x2="278" y2="1216"/>
+    <line x1="555" y1="0" x2="555" y2="1216"/>
+  </g>
+  <g fill="#ffffff" text-anchor="middle">
+    <circle cx="139" cy="560" r="56" fill="rgba(255,255,255,0.22)"/>
+    <text x="139" y="580" font-size="58" font-weight="700">1</text>
+    <text x="139" y="680" font-size="40" font-weight="600">Char. A</text>
+    <circle cx="416" cy="560" r="56" fill="rgba(255,255,255,0.22)"/>
+    <text x="416" y="580" font-size="58" font-weight="700">2</text>
+    <text x="416" y="680" font-size="40" font-weight="600">Char. B</text>
+    <circle cx="693" cy="560" r="56" fill="rgba(255,255,255,0.22)"/>
+    <text x="693" y="580" font-size="58" font-weight="700">3</text>
+    <text x="693" y="680" font-size="40" font-weight="600">Char. C</text>
+    <text x="693" y="735" font-size="34" font-weight="500" opacity="0.9">(LoRA)</text>
+  </g>
+</svg>

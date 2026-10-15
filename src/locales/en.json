@@ -1,92 +1,177 @@
 {
   "meta": {
-    "title": "TODO: Name | Robotics Engineer",
-    "description": "TODO: one-line bio for search engines"
+    "title": "Jinhong Yu | Robotics Software Engineer"
+  },
+  "common": {
+    "present": "Present"
   },
   "nav": {
-    "home": "Home",
     "projects": "Projects",
+    "experience": "Experience",
     "skills": "Skills",
     "contact": "Contact",
-    "langToggle": "中文"
+    "langToggle": "中文",
+    "langLabel": "切换到中文",
+    "themeLabel": "Toggle light / dark theme",
+    "menu": "Menu",
+    "research": "Research"
   },
   "hero": {
-    "greeting": "Hi, I'm",
-    "name": "TODO: Name",
-    "nameEn": "TODO: name in pinyin",
-    "tagline": "TODO: one-line objective, e.g. engineer focused on embodied AI and robot interactive control",
-    "education": "TODO: school · major · graduation, e.g. XX University · Robotics · Class of 2026",
-    "viewProjects": "View Projects",
-    "downloadResume": "Download Resume"
+    "eyebrow": "Robotics Software Engineer",
+    "name": "Jinhong Yu",
+    "headline": "I build the systems that let people teach robots: VR teleoperation, robot data collection and on-device AI.",
+    "summary": "Founding robotics engineer with hands-on experience across XR, embedded hardware and AI models — from the headset an operator wears to the dataset a robot policy learns from. M.S. in Artificial Intelligence, Northeastern University.",
+    "viewProjects": "View projects",
+    "resume": "Resume",
+    "focusLabel": "Focus areas",
+    "focus": [
+      "VR Teleoperation",
+      "Robot Data Collection",
+      "XR Human–Robot Interaction",
+      "Edge AI",
+      "Full-Stack Web"
+    ],
+    "facts": [
+      {
+        "label": "Now",
+        "value": "Full-Stack Software Engineer · SwiftShop"
+      },
+      {
+        "label": "Before",
+        "value": "Founding Robotics Engineer · Theta-intelligence"
+      },
+      {
+        "label": "Education",
+        "value": "M.S. Artificial Intelligence · Northeastern University"
+      }
+    ]
   },
-  "projectGroups": {
-    "collection": {
-      "title": "Data Collection",
-      "subtitle": "High-quality demonstration data for robot policy training: hardware, recording, encoding, upload"
-    },
-    "interaction": {
-      "title": "Interactive Control",
-      "subtitle": "Real-time human-driven devices: teleoperation mapping and natural-language control"
+  "categories": {
+    "interaction": "Interactive Control",
+    "data": "Data Collection",
+    "ai": "AI & Models",
+    "web": "Full-Stack"
+  },
+  "projectsSection": {
+    "eyebrow": "Selected work",
+    "title": "Projects",
+    "subtitle": "Systems I designed and shipped at work, each with its own write-up: the problem, what I built and how it fits together.",
+    "filterLabel": "Filter projects by category",
+    "all": "All",
+    "readMore": "Read case study"
+  },
+  "researchSection": {
+    "eyebrow": "Writing",
+    "title": "Research & Notes",
+    "subtitle": "Surveys and study notes from digging into how things work, mostly diffusion models.",
+    "read": "Read article",
+    "minRead_one": "{{count}} min read",
+    "minRead_other": "{{count}} min read",
+    "kinds": {
+      "survey": "Survey",
+      "note": "Study note"
     }
   },
-  "projects": {
-    "umi": {
-      "title": "UMI Data Collection · Custom Handheld Device",
-      "summary": "TODO: one-liner, e.g. custom handheld capture device with wireless recording and auto-upload to the dataset hub",
-      "role": "TODO: your part, e.g. hardware selection, firmware, upload pipeline",
-      "stack": ["Raspberry Pi 4", "Wireless Recording", "Dataset Hub"],
-      "details": "TODO: details: hardware design, recording flow, data format, upload mechanism, scale",
-      "videoPlaceholder": "TODO: demo video link or local path (Bilibili/YouTube embed, or public/videos/umi.mp4)"
-    },
-    "ego": {
-      "title": "EGO Collection · Quest 3 + Stereo Vision",
-      "summary": "TODO: one-liner, e.g. recording setup with Meta Quest 3 hand tracking and an external USB stereo camera",
-      "role": "TODO: your part, e.g. recording pipeline, A/V encoding and sync, upload tooling",
-      "stack": ["Meta Quest 3", "Hand Tracking", "Stereo Camera", "A/V Encoding"],
-      "details": "TODO: details: calibration, time sync, encoding settings, dataset scale",
-      "videoPlaceholder": "TODO: demo video link or local path"
-    },
-    "teleop": {
-      "title": "Teleoperation · OpenXR + Unity + Quest",
-      "summary": "TODO: one-liner, e.g. OpenXR-based robot teleoperation with real-time motion mapping",
-      "role": "TODO: your part, e.g. Unity-side motion capture, mapping, comms link",
-      "stack": ["OpenXR", "Unity", "Meta Quest"],
-      "details": "TODO: details: DoF mapping, latency, supported robots, demo scenarios",
-      "videoPlaceholder": "TODO: demo video link or local path"
-    },
-    "coglet": {
-      "title": "Desktop Pet · ESP32 + ESP-CLAW",
-      "summary": "TODO: one-liner, e.g. natural-language dialogue and control on open-source coglet hardware via ESP32 running ESP-CLAW",
-      "role": "TODO: your part, e.g. firmware porting, dialogue pipeline, motion control",
-      "stack": ["ESP32", "ESP-CLAW", "Natural-Language Dialogue"],
-      "details": "TODO: details: reused open-source parts vs your own work, on-device trimming, interaction results",
-      "videoPlaceholder": "TODO: demo video link or local path"
-    }
+  "project": {
+    "back": "All projects",
+    "role": "My role",
+    "company": "Company",
+    "period": "Period",
+    "stack": "Tech stack",
+    "prev": "Previous",
+    "next": "Next",
+    "more": "More projects",
+    "toc": "On this page",
+    "backResearch": "All research & notes"
   },
-  "projectCard": {
-    "roleLabel": "My Role",
-    "showDetails": "Show details",
-    "hideDetails": "Hide details",
-    "videoLabel": "Demo Video"
+  "experienceSection": {
+    "eyebrow": "Career",
+    "title": "Experience",
+    "subtitle": "Robotics, XR and AI engineering — plus full-stack web.",
+    "related": "Projects:",
+    "items": {
+      "swiftshop": {
+        "role": "Full-Stack Software Engineer",
+        "company": "SwiftShop",
+        "points": [
+          "Developing an e-commerce platform: a store-management back office and a customer-facing WeChat Mini Program."
+        ]
+      },
+      "theta": {
+        "role": "Founding Robotics Engineer",
+        "company": "Theta-intelligence",
+        "points": [
+          "Built a full-stack VR teleoperation platform for robots, including interactive UI, mixed reality, computer-vision integration and external UVC camera support.",
+          "Developed Android native plugins for Meta Quest that run ONNX models on-device, including sherpa-onnx text-to-speech.",
+          "Designed and integrated robot data-collection hardware: a Meta Quest–based UMI device and an egocentric sensing platform.",
+          "Built end-to-end data pipelines on Raspberry Pi and Meta Quest with synchronized video, sensor and IoT recording for robot learning.",
+          "Developed real-time multi-modal media streaming between robots, XR devices and remote operator stations.",
+          "Deployed a voice-interactive AI agent on ESP32 (ESP-Claw) and Raspberry Pi (zero-Claw) for natural-language conversation and robot control."
+        ]
+      },
+      "cardinal": {
+        "role": "AI Model Engineering Intern",
+        "company": "Cardinal Operations",
+        "points": [
+          "Provided engineering support for text-to-image and text-to-video experiments.",
+          "Fine-tuned Stable Diffusion on limited hardware using LoRA and model parallelism.",
+          "Deployed a text-to-video pipeline focused on multi-character generation and character consistency."
+        ]
+      },
+      "neu": {
+        "role": "Research & Teaching Assistant",
+        "company": "Northeastern University",
+        "points": [
+          "Supported coursework through grading and office hours; gave a well-received guest lecture on diffusion models.",
+          "Deployed lab servers to speed up research projects.",
+          "Designed, implemented and ran experiments across research initiatives so project leads could focus on ideas."
+        ]
+      }
+    }
   },
   "skillsSection": {
+    "eyebrow": "Toolbox",
     "title": "Skills",
-    "subtitle": "TODO: adjust groups and items to match your background",
+    "subtitle": "From robot middleware and XR to embedded hardware, AI models and the web.",
     "groups": {
       "robotics": "Robotics",
-      "embedded": "Embedded",
-      "software": "Software"
+      "xr": "XR Development",
+      "ai": "AI & Models",
+      "embedded": "Embedded & Hardware",
+      "web": "Web",
+      "tools": "AI-Assisted Engineering"
     }
   },
+  "educationSection": {
+    "eyebrow": "Background",
+    "title": "Education",
+    "items": [
+      {
+        "degree": "M.S. in Artificial Intelligence",
+        "school": "Northeastern University",
+        "department": "Khoury College of Computer Sciences",
+        "years": "2021 – 2023"
+      },
+      {
+        "degree": "B.Eng. in Machine Design, Manufacturing & Automation",
+        "school": "South China Agricultural University",
+        "department": "College of Engineering",
+        "years": "2013 – 2017"
+      }
+    ]
+  },
   "contactSection": {
-    "title": "Contact",
-    "subtitle": "TODO: one-liner, e.g. open to robotics roles, happy to chat about embodied AI",
-    "email": "TODO: email address",
-    "github": "TODO: GitHub profile URL",
-    "linkedin": "TODO: LinkedIn profile URL",
-    "resumeNote": "TODO: drop your resume PDF at public/resume.pdf to enable this button"
+    "eyebrow": "Contact",
+    "title": "Let's build robots people can actually teach.",
+    "subtitle": "Interested in robotics, XR or embodied-AI roles and collaborations. The fastest way to reach me is email.",
+    "email": "Email me"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to home"
   },
   "footer": {
-    "builtWith": "Built with React · Deployed on GitHub Pages"
+    "rights": "© {{year}} Jinhong Yu"
   }
 }
