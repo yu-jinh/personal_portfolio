@@ -14,8 +14,8 @@
     "contact": "联系",
     "langToggle": "EN",
     "langLabel": "Switch to English",
-    "themeLight": "切换到浅色主题",
-    "themeDark": "切换到深色主题",
+    "themeLight": "切换到浅色模式",
+    "themeDark": "切换到深色模式",
     "sections": "页面导航",
     "menu": "菜单",
     "close": "关闭菜单"
@@ -23,39 +23,51 @@
   "hero": {
     "name": "Jinhong Yu",
     "role": "机器人软件工程师",
-    "thesis": "我构建连接人与机器人的系统：遥操作、混合现实工具，以及把人的示范变成机器人训练数据的采集装置。",
-    "intro": "在 Theta‑intelligence 担任创始机器人工程师期间，我搭建了 Meta Quest 遥操作平台及其实时传输层，以及手持式与第一视角数据采集系统。机械工程本科加人工智能硕士的背景，让我的工作从 CAD 与接线一直延伸到 Unity、感知与模型微调。",
+    "thesis": "我开发遥操作、混合现实和数据采集系统，把人类示范变成机器人训练数据。",
+    "intro": "我曾在 Theta‑intelligence 担任创始机器人工程师，搭建了基于 Meta Quest 的遥操作平台和实时传输层。同期还开发了手持式和第一视角两套数据采集系统。我本科读机械工程，硕士读人工智能。所以我的工作从 CAD 建模、硬件接线，一直延伸到 Unity 开发、感知算法和模型微调。",
     "status": [
-      { "label": "现在", "value": "全栈软件工程师，SwiftShop", "detail": "2026.08 至今" },
-      { "label": "此前", "value": "创始机器人工程师，Theta‑intelligence", "detail": "2024.09 – 2026.07" },
-      { "label": "学历", "value": "人工智能硕士，美国东北大学", "detail": "2021 – 2023" }
+      {
+        "label": "现任",
+        "value": "SwiftShop · 全栈软件工程师",
+        "detail": "2026.08 至今"
+      },
+      {
+        "label": "曾任",
+        "value": "Theta‑intelligence · 创始机器人工程师",
+        "detail": "2024.09 – 2026.07"
+      },
+      {
+        "label": "学历",
+        "value": "美国东北大学 · 人工智能硕士",
+        "detail": "2021 – 2023"
+      }
     ],
-    "email": "邮件",
+    "email": "发邮件",
     "copyEmail": "复制邮箱地址",
     "copied": "已复制",
     "linkedin": "LinkedIn",
     "resume": "简历（PDF）",
-    "frameLabel": "一个带 x、y、z 轴的坐标系，机器人所有位姿都以它为参照"
+    "frameLabel": "示意图：base 与 object 两个坐标系，由变换 T 相连"
   },
   "categories": {
-    "interaction": "交互控制",
+    "interaction": "人机交互",
     "data": "数据采集",
     "ai": "AI 与模型",
     "web": "全栈开发"
   },
   "projectsSection": {
     "title": "代表项目",
-    "intro": "我在 Theta‑intelligence 设计并实现的系统。每篇介绍都包含要解决的问题、约束条件、设计取舍与最终成果。",
-    "readMore": "阅读详情"
+    "intro": "我在 Theta‑intelligence 设计并实现的系统。每篇文章先讲系统能做什么、关键数据是多少，再讲设计思路。",
+    "readMore": "阅读全文"
   },
   "researchSection": {
     "title": "文章",
-    "intro": "学习扩散模型时写下的一篇技术调研和一篇学习笔记。",
+    "intro": "学习扩散模型时写的一篇文献综述和一篇推导笔记。",
     "read": "阅读",
-    "minRead_one": "约 {{count}} 分钟阅读",
-    "minRead_other": "约 {{count}} 分钟阅读",
+    "minRead_one": "约 {{count}} 分钟",
+    "minRead_other": "约 {{count}} 分钟",
     "kinds": {
-      "survey": "技术调研",
+      "survey": "文献综述",
       "note": "学习笔记"
     }
   },
@@ -66,61 +78,80 @@
     "company": "公司",
     "period": "时间",
     "stack": "技术栈",
-    "facts": "关键数字",
+    "facts": "关键数据",
     "prev": "上一篇",
     "next": "下一篇",
-    "more": "更多",
-    "toc": "本页目录",
+    "more": "更多文章",
+    "toc": "目录",
     "progress": "阅读进度"
   },
   "experienceSection": {
     "title": "工作经历",
-    "intro": "机器人、XR 与 AI 工程，近期从事全栈 Web 开发。",
+    "intro": "机器人、XR 与 AI 方向的工程工作，最近一份是全栈 Web 开发。",
     "related": "相关项目",
     "items": {
       "swiftshop": {
         "role": "全栈软件工程师",
         "company": "SwiftShop",
         "points": [
-          { "text": "开发电商平台：面向商家的门店管理后台，以及面向顾客的微信小程序。" }
+          {
+            "text": "开发电商平台，包括商家使用的门店管理后台和面向顾客的微信小程序。"
+          }
         ]
       },
       "theta": {
         "role": "创始机器人工程师",
         "company": "Theta‑intelligence",
         "points": [
-          { "label": "遥操作", "text": "开发 Meta Quest 遥操作应用（Unity、OpenXR），包括混合现实界面与外接 UVC 摄像头支持，以及在机器人、头显与远程操作站之间传输视频、音频和控制数据的实时传输层。" },
-          { "label": "数据采集", "text": "设计并集成采集硬件，包括由 Quest 追踪的手持 UMI 夹爪和第一视角采集装置，并在树莓派与 Quest 上搭建视频、传感器与 IoT 数据的同步录制链路。" },
-          { "label": "端侧 AI", "text": "开发在 Quest 上运行 ONNX 模型的 Android 原生插件（包括 sherpa-onnx 语音合成），并在 ESP32（ESP-Claw）与树莓派（zero-Claw）上部署语音驱动的 AI 智能体。" }
+          {
+            "label": "遥操作",
+            "text": "用 Unity 和 OpenXR 开发 Meta Quest 遥操作应用，支持混合现实界面和外接 UVC 摄像头。实时传输层连接机器人、头显和操作端，传输视频、音频和控制数据。指令以 200 Hz 发送，视频以 30 fps 传输。"
+          },
+          {
+            "label": "数据采集",
+            "text": "设计并集成两套采集设备：由 Quest 追踪的手持 UMI 夹爪，以及第一视角采集装置。树莓派和 Quest 上的同步录制链路负责采集视频、传感器和 IoT 数据。"
+          },
+          {
+            "label": "端侧 AI",
+            "text": "开发 Android 原生插件，在 Quest 上运行 ONNX 模型，其中包括 sherpa-onnx 语音合成。在 ESP32（ESP-Claw）和树莓派（zero-Claw）上部署了语音驱动的 AI 智能体。"
+          }
         ]
       },
       "cardinal": {
         "role": "AI 模型工程实习生",
         "company": "杉数科技（Cardinal Operations）",
         "points": [
-          { "text": "在有限的 GPU 资源下，使用 LoRA 与模型并行微调 Stable Diffusion。" },
-          { "text": "部署面向多角色场景与角色一致性的文生视频流水线，并为团队的文生图、文生视频实验提供工程支持。" }
+          {
+            "text": "在 GPU 资源有限的条件下，用 LoRA 和模型并行微调 Stable Diffusion。"
+          },
+          {
+            "text": "部署了面向多角色场景、保持角色一致性的文生视频流程。同时为团队的文生图和文生视频实验提供工程支持。"
+          }
         ]
       },
       "neu": {
-        "role": "研究与教学助理",
+        "role": "研究助理兼助教",
         "company": "美国东北大学",
         "points": [
-          { "text": "批改作业、答疑，并讲授了一堂扩散模型客座课程。" },
-          { "text": "为科研项目搭建实验室服务器，并为项目负责人设计、实现和运行实验。" }
+          {
+            "text": "批改作业、答疑，并做过一次扩散模型的客座讲座。"
+          },
+          {
+            "text": "为科研项目搭建实验室服务器，并为项目负责人设计、实现和运行实验。"
+          }
         ]
       }
     }
   },
   "skillsSection": {
     "title": "技能",
-    "intro": "以上工作中实际使用过的工具。",
+    "intro": "以上工作中实际用过的工具。",
     "groups": {
       "robotics": "机器人",
       "xr": "XR",
       "perception": "感知与机器学习",
       "embedded": "嵌入式与硬件",
-      "web": "Web",
+      "web": "Web 开发",
       "languages": "编程语言",
       "tools": "AI 辅助开发"
     }
@@ -129,13 +160,13 @@
     "title": "教育经历",
     "items": [
       {
-        "degree": "人工智能 硕士",
+        "degree": "人工智能硕士",
         "school": "美国东北大学（Northeastern University）",
-        "department": "Khoury 计算机科学学院",
+        "department": "Khoury 计算机学院",
         "years": "2021 – 2023"
       },
       {
-        "degree": "机械设计制造及其自动化 工学学士",
+        "degree": "工学学士 · 机械设计制造及其自动化",
         "school": "华南农业大学",
         "department": "工程学院",
         "years": "2013 – 2017"
@@ -143,17 +174,17 @@
     ]
   },
   "contactSection": {
-    "title": "联系",
-    "text": "机器人、XR 或具身智能方面的工作，发邮件是联系我最快的方式。"
+    "title": "联系方式",
+    "text": "机器人、XR 或具身智能方面的工作，欢迎发邮件联系我，这是最快的方式。"
   },
   "notFound": {
     "title": "页面不存在",
-    "text": "你访问的页面不存在或已被移动。",
+    "text": "你访问的页面不存在，或已被移动。",
     "home": "返回首页"
   },
   "footer": {
     "rights": "© {{year}} Jinhong Yu",
-    "built": "使用 React 与 Vite 构建",
+    "built": "基于 React 和 Vite 构建",
     "top": "回到顶部"
   }
 }

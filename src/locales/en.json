@@ -23,29 +23,41 @@
   "hero": {
     "name": "Jinhong Yu",
     "role": "Robotics software engineer",
-    "thesis": "I build the systems between people and robots: teleoperation, mixed-reality tools, and the capture rigs that turn human demonstrations into robot training data.",
-    "intro": "As the founding robotics engineer at Theta‑intelligence, I built a Meta Quest teleoperation platform with its real-time streaming layer, plus handheld and egocentric data-collection systems. My background is mechanical engineering and an M.S. in AI, so the work runs from CAD and wiring to Unity, perception and model fine-tuning.",
+    "thesis": "I build teleoperation, mixed-reality and data-capture systems that turn human demonstrations into robot training data.",
+    "intro": "As founding robotics engineer at Theta‑intelligence, I built a Meta Quest teleoperation platform and its real-time streaming layer. I also built handheld and egocentric data-collection systems. With a mechanical engineering degree and an M.S. in AI, my work ranges from CAD and wiring to Unity, perception and model fine-tuning.",
     "status": [
-      { "label": "Now", "value": "Full-stack software engineer, SwiftShop", "detail": "since Aug 2026" },
-      { "label": "Before", "value": "Founding robotics engineer, Theta‑intelligence", "detail": "Sep 2024 – Jul 2026" },
-      { "label": "Study", "value": "M.S. Artificial Intelligence, Northeastern University", "detail": "2021 – 2023" }
+      {
+        "label": "Now",
+        "value": "Full-stack software engineer, SwiftShop",
+        "detail": "since Aug 2026"
+      },
+      {
+        "label": "Previously",
+        "value": "Founding robotics engineer, Theta‑intelligence",
+        "detail": "Sep 2024 – Jul 2026"
+      },
+      {
+        "label": "Education",
+        "value": "M.S. Artificial Intelligence, Northeastern University",
+        "detail": "2021 – 2023"
+      }
     ],
     "email": "Email",
     "copyEmail": "Copy email address",
     "copied": "Copied",
     "linkedin": "LinkedIn",
     "resume": "Résumé (PDF)",
-    "frameLabel": "A coordinate frame with x, y and z axes, the reference every robot pose is measured in"
+    "frameLabel": "Diagram: two coordinate frames, base and object, linked by a transform T"
   },
   "categories": {
-    "interaction": "Interactive control",
+    "interaction": "Human–robot interaction",
     "data": "Data collection",
     "ai": "AI & models",
     "web": "Full-stack"
   },
   "projectsSection": {
     "title": "Selected work",
-    "intro": "Systems I designed and built at Theta‑intelligence. Each write-up covers the problem, the constraints, the design decisions and what came out of them.",
+    "intro": "Systems I designed and built at Theta‑intelligence. Each write-up leads with what the system does and its measured numbers, then explains the design.",
     "readMore": "Read the write-up"
   },
   "researchSection": {
@@ -75,46 +87,65 @@
   },
   "experienceSection": {
     "title": "Experience",
-    "intro": "Robotics, XR and AI engineering, and most recently full-stack web.",
+    "intro": "Robotics, XR and AI engineering, most recently full-stack web development.",
     "related": "Related",
     "items": {
       "swiftshop": {
         "role": "Full-stack software engineer",
         "company": "SwiftShop",
         "points": [
-          { "text": "Building an e-commerce platform: a store-management back office for merchants and a customer-facing WeChat Mini Program." }
+          {
+            "text": "Building an e-commerce platform: a store-management back office for merchants and a customer-facing WeChat Mini Program."
+          }
         ]
       },
       "theta": {
         "role": "Founding robotics engineer",
         "company": "Theta‑intelligence",
         "points": [
-          { "label": "Teleoperation", "text": "Built the Meta Quest teleoperation app (Unity, OpenXR) with mixed-reality UI and external UVC camera support, and the real-time layer that streams video, audio and control between robots, headsets and remote operator stations." },
-          { "label": "Data collection", "text": "Designed and integrated the capture hardware, a Quest-tracked handheld UMI gripper and an egocentric rig, and built synchronized recording pipelines on Raspberry Pi and Quest for video, sensor and IoT data." },
-          { "label": "Edge AI", "text": "Wrote Android native plugins that run ONNX models on Quest, including sherpa-onnx text-to-speech, and deployed voice-driven AI agents on ESP32 (ESP-Claw) and Raspberry Pi (zero-Claw)." }
+          {
+            "label": "Teleoperation",
+            "text": "Built the Meta Quest teleoperation app (Unity, OpenXR), with mixed-reality UI and external UVC camera support. Its real-time layer streams video, audio and control between robots, headsets and operator stations, with commands at 200 Hz and video at 30 fps."
+          },
+          {
+            "label": "Data collection",
+            "text": "Designed and integrated two capture rigs: Quest-tracked handheld UMI grippers and an egocentric rig. Synchronized pipelines on Raspberry Pi and Quest record video, sensor and IoT data."
+          },
+          {
+            "label": "Edge AI",
+            "text": "Wrote Android native plugins that run ONNX models on Quest, including sherpa-onnx text-to-speech. Deployed voice-driven AI agents on ESP32 (ESP-Claw) and Raspberry Pi (zero-Claw)."
+          }
         ]
       },
       "cardinal": {
         "role": "AI model engineering intern",
         "company": "Cardinal Operations",
         "points": [
-          { "text": "Fine-tuned Stable Diffusion on limited GPU hardware using LoRA and model parallelism." },
-          { "text": "Deployed a text-to-video pipeline aimed at multi-character scenes with consistent characters, and supported the team's text-to-image and text-to-video experiments." }
+          {
+            "text": "Fine-tuned Stable Diffusion on limited GPU hardware using LoRA and model parallelism."
+          },
+          {
+            "text": "Deployed a text-to-video pipeline aimed at multi-character scenes with consistent characters, and supported the team's text-to-image and text-to-video experiments."
+          }
         ]
       },
       "neu": {
         "role": "Research and teaching assistant",
         "company": "Northeastern University",
         "points": [
-          { "text": "Graded coursework, held office hours and gave a guest lecture on diffusion models." },
-          { "text": "Set up lab servers for research projects, and designed, implemented and ran experiments for project leads." }
+          {
+            "text": "Graded coursework, held office hours and gave a guest lecture on diffusion models."
+          },
+          {
+            "text": "Set up lab servers for research projects, and designed, implemented and ran experiments for the project leads."
+          }
         ]
       }
     }
   },
   "skillsSection": {
     "title": "Skills",
-    "intro": "Tools I've used in the work above.",
+    "intro": "Tools I have used in the work above.",
     "groups": {
       "robotics": "Robotics",
       "xr": "XR",
