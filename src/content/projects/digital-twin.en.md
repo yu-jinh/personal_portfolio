@@ -3,7 +3,7 @@ title: Digital Twin in Mixed Reality: Robot Data Inside a Quest Headset
 summary: One Quest app shows a remote robot's world in mixed reality: per-eye stereo video, depth point clouds, PLY scans, a live URDF twin and detected objects at their 6D poses.
 role: Built the visualization stack end to end: the stereo and point-cloud shaders, the depth and PLY renderers, the runtime URDF loader and joint sync, and the pipeline that brings object poses into the robot's base frame.
 brief: Brings a remote robot's world into a Quest headset: stereo video, depth point clouds, a URDF twin synced at 15 Hz and object 6D poses.
-facts: 15 Hz :: robot joint angles streamed to the twin || 2.2 M :: points in the PLY scan demo, drawn in one call || 2 tracks :: left and right stereo video, one per eye
+facts: 5 data types :: stereo video, depth, scans, twin, object poses || 2.2 M points :: in a scanned scene, drawn in one GPU call || 15 Hz :: joint updates keeping the twin in sync
 ---
 
 ## Summary

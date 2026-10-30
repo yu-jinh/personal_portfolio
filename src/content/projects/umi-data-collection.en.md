@@ -3,7 +3,7 @@ title: UMI Data Collection Device
 summary: A pair of handheld grippers for recording two-handed manipulation demonstrations without a robot, with Quest controllers tracking each gripper and an on-board Raspberry Pi 4 recording its wrist cameras.
 role: I built it end to end, mostly on my own: mechanical design (fingers adapted from the UFactory xArm Gripper), electronics, the Raspberry Pi recorder, the Quest recording app and its state machine, and post-processing.
 brief: Two handheld grippers record two-handed manipulation without a robot, tracked by Quest controllers and coordinated by one state machine on the headset.
-facts: 2 × 2 :: grippers × wrist cameras on each || 640 × 480 :: resolution of each wrist camera || 3 :: recorders driven by one state machine
+facts: Live :: gripper poses from Quest tracking, not SLAM || 3 recorders :: headset and 2 grippers on one state machine || No sensors :: on the fingers; opening read from markers
 ---
 
 ## Summary

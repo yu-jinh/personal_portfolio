@@ -3,7 +3,7 @@ title: EGO Data Collection with Meta Quest 3
 summary: First-person data collection with no handheld hardware: a neck-worn Meta Quest 3 records stereo video, hand skeletons and palm trajectories, and two-handed gestures drive UMI's recording state machine.
 role: Designed and built the setup: the Quest app (UVC camera capture, hand-tracking export, gesture recognition and the recording state machine), signal checks in simulation and on a real robot, and the recording pipeline.
 brief: A neck-worn Quest alone records bare-hand demonstrations as stereo video, hand skeletons and palm trajectories, with gestures to start, stop and label them.
-facts: 3 → 1 :: devices recording each Episode (UMI → EGO) || 21 :: keypoints per hand (MediaPipe layout) || 6-DoF :: Palm Pose per hand, recorded instead of the wrist pose || ≈ 1 s :: two-hand hold to start or stop recording
+facts: 3 → 1 :: devices per recording, from UMI to EGO || 21 keypoints :: per hand, in the standard MediaPipe layout
 ---
 
 ## Summary

@@ -1,4 +1,4 @@
-// Key numbers, each printed with what it measures (from the post's `facts` frontmatter).
+// Highlights, each value printed with what it means (from the post's `facts` frontmatter).
 export default function Facts({ facts, className = '', label }) {
   if (!facts?.length) return null
   return (

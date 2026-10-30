@@ -3,7 +3,7 @@ title: VR Teleoperation Platform for Robots
 summary: A Meta Quest app and real-time LiveKit infrastructure for remote robot teleoperation. One robot-independent interface drives both xArm arms and a humanoid with dexterous hands.
 role: Founding engineer. Designed and built the platform end to end: the Quest app (Unity + OpenXR), the LiveKit room architecture, the robot-independent teleop interface and robot bridges, controller calibration, and the data-collection workflow.
 brief: One Quest app teleoperates different robots by sending a single robot-independent teleop message through LiveKit rooms, while others watch live.
-facts: 200 Hz :: teleop command publish rate || 30 fps :: robot camera video stream || 3 robots :: tested in one room, switched with one click
+facts: 2 robot types :: xArm 7 arms and a humanoid, one app || 3 robots :: in one room, switched with one click || 200 Hz :: teleop command rate from the headset
 ---
 
 ## Summary

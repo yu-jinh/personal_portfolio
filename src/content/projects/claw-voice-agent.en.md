@@ -3,7 +3,7 @@ title: An ESP32 AI Agent and Control Module for the Coglet Robot
 summary: I reproduced the open-source Coglet companion robot designed by Will Cogley and built an AI agent and control module for it on an ESP32-S3 with Espressif's ESP-Claw framework.
 role: Reproduced the Coglet hardware from its open-source design, then built the agent and control layer: I²C servo wiring, the ESP-Claw port, a teach pendant that records and replays skills and tasks, the Lua bridge that triggers motions, browser camera and audio streaming, and the vision-module integration.
 brief: An LLM agent on an ESP32-S3 turns plain-language requests into recorded motions on the open-source Coglet robot and reads on-board vision results.
-facts: 9 servos :: driven over 2 I²C wires, shared with the vision module || ≈ 21 ms :: per-frame detection inference on the vision module || 640 × 480 :: MJPEG camera stream in the browser at 30 fps
+facts: No code :: new skills are recorded on a teach pendant || 9 servos :: on 2 I²C wires, shared with the vision module || ≈ 21 ms :: on-board detection per frame, no video upload
 ---
 
 ## Summary
