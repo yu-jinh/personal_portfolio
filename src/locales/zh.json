@@ -62,7 +62,7 @@
   },
   "researchSection": {
     "title": "文章",
-    "intro": "学习扩散模型时写的一篇文献综述和一篇推导笔记。",
+    "intro": "综述与学习笔记：扩散模型，以及 Unity Quest 应用背后的 Android 构建。",
     "read": "阅读",
     "minRead_one": "约 {{count}} 分钟",
     "minRead_other": "约 {{count}} 分钟",
@@ -83,7 +83,9 @@
     "next": "下一篇",
     "more": "更多文章",
     "toc": "目录",
-    "progress": "阅读进度"
+    "progress": "阅读进度",
+    "loadError": "文章加载失败。",
+    "reload": "重新加载页面"
   },
   "experienceSection": {
     "title": "工作经历",

@@ -27,7 +27,12 @@ function NeighborLink({ project, direction }) {
   )
 }
 
+const RELOAD_KEY = 'post-chunk-reload'
+
 // The rendered Markdown body is a separate chunk; `null` while it loads.
+// A tab opened before a deploy still points at the old chunk names, which no
+// longer exist; the first failed load reloads the page to pick up the new
+// build, and a second failure (within a minute) shows an error instead.
 function usePostBody(post) {
   const [body, setBody] = useState(null)
   const key = post?.key
@@ -35,7 +40,23 @@ function usePostBody(post) {
     if (!post) return undefined
     let alive = true
     setBody(null)
-    loadPostBody(post).then((loaded) => { if (alive) setBody(loaded) })
+    loadPostBody(post)
+      .then((loaded) => {
+        if (!alive) return
+        try { sessionStorage.removeItem(RELOAD_KEY) } catch {}
+        setBody(loaded)
+      })
+      .catch(() => {
+        if (!alive) return
+        let last = 0
+        try { last = Number(sessionStorage.getItem(RELOAD_KEY)) || 0 } catch {}
+        if (Date.now() - last > 60000) {
+          try { sessionStorage.setItem(RELOAD_KEY, String(Date.now())) } catch {}
+          window.location.reload()
+        } else {
+          setBody({ error: true })
+        }
+      })
     return () => { alive = false }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key])
@@ -171,7 +192,12 @@ export default function ProjectPage() {
       )}
 
       <div className="container container-narrow">
-        {body ? (
+        {body?.error ? (
+          <p className="prose-error" role="alert">
+            {t('project.loadError')}{' '}
+            <button type="button" onClick={() => window.location.reload()}>{t('project.reload')}</button>
+          </p>
+        ) : body ? (
           <PostToc toc={body.toc}>
             <div className="prose" dangerouslySetInnerHTML={{ __html: body.html }} />
           </PostToc>

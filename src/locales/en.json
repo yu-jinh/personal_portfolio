@@ -62,7 +62,7 @@
   },
   "researchSection": {
     "title": "Writing",
-    "intro": "A literature survey and a study note on diffusion models, written while learning the field.",
+    "intro": "Surveys and study notes: diffusion models and the Android build behind a Unity Quest app.",
     "read": "Read",
     "minRead_one": "{{count}} min read",
     "minRead_other": "{{count}} min read",
@@ -83,7 +83,9 @@
     "next": "Next",
     "more": "More",
     "toc": "On this page",
-    "progress": "Reading progress"
+    "progress": "Reading progress",
+    "loadError": "This article couldn't be loaded.",
+    "reload": "Reload the page"
   },
   "experienceSection": {
     "title": "Experience",

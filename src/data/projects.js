@@ -68,6 +68,18 @@ export const PROJECTS = [
     video: '',
   },
   {
+    // Separate English and Chinese write-ups; the diagrams have a .zh.svg twin each.
+    slug: 'unity-android-gradle',
+    kind: 'note',
+    category: 'interaction',
+    org: '',
+    start: '2026.10',
+    end: '2026.10',
+    stack: ['Unity 6000.6', 'Gradle 9.3.1', 'Android Gradle Plugin 9.1.1', 'IL2CPP', 'Android NDK r27', 'CMake'],
+    cover: '',
+    video: '',
+  },
+  {
     // English-only write-up: the Chinese site falls back to the .en.md file.
     slug: 'multi-character-diffusion',
     kind: 'survey',
